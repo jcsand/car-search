@@ -20,8 +20,10 @@ export const htmlWebpackPlugin = (rootDir) =>
 
 export const prettierPlugin = () => new PrettierWebpackPlugin();
 
-export const stylelintPlugin = (rootDir) => new StylelintWebpackPlugin({
-    configFile: join(rootDir, '.stylelintrc'),
-    context: path.resolve(rootDir, 'src'),
-    files: '**/*.{css,html,tsx}'
-})
+export const stylelintPlugin = (rootDir) =>
+  new StylelintWebpackPlugin({
+    configFile: join(rootDir, ".stylelintrc"),
+    context: path.resolve(rootDir, "src"),
+    files: "**/*.{css,html,tsx}",
+    fix: true
+  });

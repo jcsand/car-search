@@ -14,7 +14,8 @@ const StyledHeader = styled.header<ColorProps>`
   ${color}
 `;
 
-const HeaderFlexContainer = styled.div`display: flex;
+const HeaderFlexContainer = styled.div`
+  display: flex;
   max-width: 1142px;
   margin: 0 auto;
 `;

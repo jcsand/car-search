@@ -7,26 +7,31 @@ const StyledHero = styled.div<ColorProps>`
   ${color}
 `;
 
-const HeaderFlexContainer = styled.div`display: flex;
+const HeaderFlexContainer = styled.div`
+  display: flex;
   flex-direction: column;
   max-width: 1142px;
   margin: 0 auto;
 `;
 
-const HeroHeader = styled.h2`font-size: 40px;
+const HeroHeader = styled.h2`
+  font-size: 40px;
   font-weight: 700;
   line-height: 52px;
 `;
 
-const HeroList = styled.ul`display: flex;
+const HeroList = styled.ul`
+  display: flex;
 `;
 
 // TODO: de-emoji
-const HeroListItem = styled.li`margin-left: 2em;
+const HeroListItem = styled.li`
+  margin-left: 2em;
   list-style-type: "✔️";
 `;
 
-const HeroSearchContainer = styled.div`display: flex;
+const HeroSearchContainer = styled.div`
+  display: flex;
   margin: calc(4px * 4) 0;
   padding: 4px;
   border-radius: calc(4px * 3);
@@ -34,7 +39,8 @@ const HeroSearchContainer = styled.div`display: flex;
   box-shadow: 0 calc(4px / 2) calc(4px * 3) rgb(0 0 0 / 16%);
 `;
 
-const HeroSearchInput = styled.input`flex-grow: 1;
+const HeroSearchInput = styled.input`
+  flex-grow: 1;
   height: 64px;
   margin-right: 4px;
   padding: calc(4px * 2);
@@ -51,20 +57,15 @@ const HeroSearchInput = styled.input`flex-grow: 1;
   }
 `;
 
-const HeroSearchButton = styled.button`height: 64px;
+const HeroSearchButton = styled.button`
+  height: 64px;
+  padding: calc(4px * 2) calc(4px * 4);
   border: 1px solid transparent;
   border-radius: calc(4px / 2) calc(4px * 2) calc(4px * 2) calc(4px / 2);
   background-color: #068323;
   color: #fff;
-  font-family:
-    "Avenir Next LT Pro",
-    BlinkMacSystemFont,
-    -apple-system,
-    "Segoe UI",
-    Roboto,
-    Helvetica,
-    Arial,
-    sans-serif;
+  font-family: "Avenir Next LT Pro", BlinkMacSystemFont, -apple-system,
+    "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   font-size: 20px;
   font-weight: 700;
   line-height: 28px;
