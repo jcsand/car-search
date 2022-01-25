@@ -3,4 +3,6 @@ import ReactDom from "react-dom";
 
 import { App } from "@components/App";
 
-ReactDom.render(<App />, document.getElementById("root"));
+const rootElement = document.getElementById("root") as HTMLElement;
+
+ReactDom.render(<App />, rootElement);

@@ -18,17 +18,18 @@ export default {
     filename: "[name].[contenthash].js"
   },
   module: {
-    rules: [rules.typescriptRule, rules.htmlRule, rules.cssRule]
+    rules: [rules.typescriptRule, rules.htmlRule, rules.cssRule, rules.svgRule]
   },
   plugins: [
     plugins.htmlWebpackPlugin(rootDir),
     plugins.prettierPlugin(),
     plugins.eslintPlugin(rootDir),
-    plugins.stylelintPlugin(rootDir)
+    plugins.stylelintPlugin(rootDir),
+    plugins.miniCssExtractPlugin()
   ],
   resolve: {
     alias: {
-      "@src": join(rootDir, "src"),
+      "@assets": join(rootDir, "src", "assets"),
       "@components": join(rootDir, "src", "components")
     },
     extensions: [".tsx", ".ts", ".js", ".jsx"]

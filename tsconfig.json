@@ -13,7 +13,7 @@
     "baseUrl": "./",
     "rootDir": "./",
     "paths": {
-      "@src/*": ["src/*"],
+      "@assets/*": ["src/assets/*"],
       "@components/*": ["src/components/*"]
     },
     "allowSyntheticDefaultImports": true,

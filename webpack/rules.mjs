@@ -1,3 +1,5 @@
+import MiniCssExtractPlugin from "mini-css-extract-plugin";
+
 export const typescriptRule = {
   test: /\.tsx?$/,
   exclude: /node_modules/,
@@ -12,8 +14,11 @@ export const htmlRule = {
 export const cssRule = {
   test: /\.css$/,
   use: [
-    "style-loader",
-    "css-loader",
+    MiniCssExtractPlugin.loader,
+    {
+      loader: "css-loader",
+      options: { modules: true }
+    },
     {
       loader: "postcss-loader",
       options: {
@@ -23,4 +28,9 @@ export const cssRule = {
       }
     }
   ]
+};
+
+export const svgRule = {
+  test: /\.svg$/i,
+  type: "asset"
 };

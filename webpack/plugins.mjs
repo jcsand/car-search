@@ -4,6 +4,7 @@ import ESLintPlugin from "eslint-webpack-plugin";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import PrettierWebpackPlugin from "prettier-webpack-plugin";
 import StylelintWebpackPlugin from "stylelint-webpack-plugin";
+import MiniCssExtractPlugin from "mini-css-extract-plugin";
 
 export const eslintPlugin = (rootDir) =>
   new ESLintPlugin({
@@ -26,4 +27,10 @@ export const stylelintPlugin = (rootDir) =>
     context: path.resolve(rootDir, "src"),
     files: "**/*.{css,html,tsx}",
     fix: true
+  });
+
+export const miniCssExtractPlugin = () =>
+  new MiniCssExtractPlugin({
+    filename: "[name].[contenthash].css",
+    chunkFilename: "[id].[contenthash].css"
   });
