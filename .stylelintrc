@@ -1,0 +1,16 @@
+{
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-property-sort-order-smacss"
+  ],
+  "overrides": [
+    {
+      "files": ["**/*.tsx"],
+      "customSyntax": "postcss-styled"
+    },
+    {
+      "files": ["**/*.html"],
+      "customSyntax": "postcss-html"
+    }
+  ]
+}
