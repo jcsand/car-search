@@ -4,6 +4,7 @@ import styled from "@emotion/styled";
 
 import { Button } from "@components/Button";
 import { Suggestions } from "@components/Suggestions";
+import { useSearch } from "../hooks/useSearch";
 
 import searchIcon from "@assets/search.svg";
 
@@ -86,7 +87,11 @@ const SearchButton = styled(Button)`
 `;
 
 export const Search: React.FC = () => {
+  const [searchState, setQuery] = useSearch("");
   const [value, setValue] = useState("");
+
+  // const showSpinner = !searchState.data && !searchState.error;
+  const showSuggestions = value.length >= 2;
 
   return (
     <SearchContainer>
@@ -95,9 +100,12 @@ export const Search: React.FC = () => {
           aria-label="Pick-up Location"
           placeholder="Pick-up Location"
           value={value}
-          onChange={({ target: { value } }) => setValue(value)}
+          onChange={({ target: { value } }) => {
+            setValue(value);
+            setQuery(value);
+          }}
         />
-        {value?.length > 1 ? <Suggestions /> : <></>}
+        {showSuggestions ? <Suggestions searchState={searchState} /> : null}
       </SearchInputContainer>
       <SearchButton>Search</SearchButton>
     </SearchContainer>

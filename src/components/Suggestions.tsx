@@ -1,6 +1,15 @@
 /** @jsxImportSource @emotion/react */
+import type { SearchState } from "../hooks/useSearch";
+
 import React from "react";
 import styled from "@emotion/styled";
+
+const PLACE_TYPE_MAP: Record<string, string> = {
+  A: "Airport",
+  C: "City",
+  D: "District",
+  T: "Station"
+};
 
 const SuggestionsContainer = styled.ul`
   position: absolute;
@@ -44,6 +53,10 @@ const SuggestionBadge = styled.span`
     background: #0071c2;
   }
 
+  &.district {
+    background: #008009;
+  }
+
   &.airport {
     background: #ff8000;
     color: #262626;
@@ -70,56 +83,35 @@ const SuggestionSubtext = styled.p`
   font-weight: 500;
   line-height: 18px;
 `;
+interface SuggestionsProps {
+  searchState?: SearchState;
+}
 
-const TEST_DATA = [
-  {
-    badge: "Airport",
-    title: "Manchester Airport (MAN)",
-    subtext: "Manchester, Greater Manchester, United Kingdom"
-  },
-  {
-    badge: "City",
-    title: "Manchester",
-    subtext: "Greater Manchester, United Kingdom"
-  },
-  {
-    badge: "Station",
-    title: "Manchester - Piccadilly Train Station",
-    subtext: "Manchester, England, United Kingdom"
-  },
-  {
-    badge: "City",
-    title: "Oldham",
-    subtext: "Greater Manchester, United Kingdom"
-  },
-  {
-    badge: "City",
-    title: "Bolton",
-    subtext: "Greater Manchester, United Kingdom"
-  },
-  {
-    badge: "City",
-    title: "Stockport",
-    subtext: "Greater Manchester, United Kingdom"
+export const Suggestions: React.FC<SuggestionsProps> = ({ searchState }) => {
+  if (!searchState?.data || searchState.error) {
+    return null;
   }
-];
-
-export const Suggestions: React.FC = () => {
-  const suggestions = TEST_DATA;
 
   return (
     <SuggestionsContainer role="listbox">
-      {suggestions.map(({ badge, title, subtext }, i) => (
-        <Suggestion key={i}>
-          <SuggestionBadge className={badge.toLowerCase()}>
-            {badge}
-          </SuggestionBadge>
-          <SuggestionContent>
-            <SuggestionTitle>{title}</SuggestionTitle>
-            <SuggestionSubtext>{subtext}</SuggestionSubtext>
-          </SuggestionContent>
-        </Suggestion>
-      )) || <Suggestion>No results found.</Suggestion>}
+      {searchState.data.map((suggestion, i) => {
+        const badge = PLACE_TYPE_MAP[suggestion.placeType];
+        const subtext = [suggestion.city, suggestion.region, suggestion.country]
+          .filter((a) => a)
+          .join(", ");
+
+        return (
+          <Suggestion key={i}>
+            <SuggestionBadge className={badge?.toLowerCase()}>
+              {badge || suggestion.placeType}
+            </SuggestionBadge>
+            <SuggestionContent>
+              <SuggestionTitle>{suggestion.name}</SuggestionTitle>
+              <SuggestionSubtext>{subtext}</SuggestionSubtext>
+            </SuggestionContent>
+          </Suggestion>
+        );
+      }) || <Suggestion>No results found.</Suggestion>}
     </SuggestionsContainer>
   );
 };

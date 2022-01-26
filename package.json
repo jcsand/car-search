@@ -32,10 +32,12 @@
     "@stylelint/postcss-css-in-js": "^0.37.2",
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
+    "@testing-library/react-hooks": "^7.0.2",
     "@typescript-eslint/eslint-plugin": "^5.10.0",
     "@typescript-eslint/parser": "^5.10.0",
     "babel-loader": "^8.2.3",
     "core-js": "^3.20.3",
+    "cross-fetch": "^3.1.5",
     "css-loader": "^6.5.1",
     "eslint": "^8.7.0",
     "eslint-config-airbnb-base": "^15.0.0",
@@ -89,11 +91,14 @@
   "jest": {
     "preset": "ts-jest",
     "testEnvironment": "jest-environment-jsdom",
+    "testRegex": "(/__tests__/.*(\\.|/)(test|spec))\\.[jt]sx?$",
     "moduleNameMapper": {
-      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)$": "<rootDir>/src/__mocks__/fileMock.ts",
-      "\\.css$": "<rootDir>/src/__mocks__/styleMock.ts",
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)$": "<rootDir>/src/__tests__/__mocks__/fileMock.ts",
+      "\\.css$": "<rootDir>/src/__tests__/__mocks__/styleMock.ts",
+      "^@src(.*)$": "<rootDir>/src/$1",
       "^@assets(.*)$": "<rootDir>/src/assets$1",
-      "^@components(.*)$": "<rootDir>/src/components$1"
+      "^@components(.*)$": "<rootDir>/src/components$1",
+      "^@hooks(.*)$": "<rootDir>/src/hooks$1"
     }
   }
 }

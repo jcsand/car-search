@@ -2,8 +2,8 @@
   "compilerOptions": {
     "outDir": "./dist",
     "module": "esnext",
-    "target": "es6",
-    "lib": ["es6", "dom"],
+    "target": "es2017",
+    "lib": ["es2017", "dom"],
     "sourceMap": true,
     "allowJs": true,
     "jsx": "react",
@@ -13,8 +13,10 @@
     "baseUrl": "./",
     "rootDir": "./",
     "paths": {
+      "@src/*": ["src/*"],
       "@assets/*": ["src/assets/*"],
-      "@components/*": ["src/components/*"]
+      "@components/*": ["src/components/*"],
+      "@hooks/*": ["src/hooks/*"]
     },
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,

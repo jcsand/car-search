@@ -6,6 +6,8 @@ import * as rules from "./webpack/rules.mjs";
 
 const rootDir = dirname(fileURLToPath(import.meta.url));
 
+// TODO: analyzer
+
 export default {
   context: rootDir,
   target: ["web", "es5"],

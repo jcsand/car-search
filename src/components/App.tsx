@@ -4,8 +4,8 @@ import { ThemeProvider } from "@emotion/react";
 import { Header } from "@components/Header";
 import { Hero } from "@components/Hero";
 
-import "../assets/reset.css";
-import "../assets/base.css";
+import "@assets/reset.css";
+import "@assets/base.css";
 
 const theme = {
   colors: {
