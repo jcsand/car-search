@@ -1,12 +1,28 @@
 /** @jsxImportSource @emotion/react */
+/* stylelint-disable */
 import React, { useState } from "react";
 import styled from "@emotion/styled";
+import { css, keyframes } from "@emotion/react";
 
 import { Button } from "@components/Button";
 import { Suggestions } from "@components/Suggestions";
 import { useSearch } from "../hooks/useSearch";
 
 import searchIcon from "@assets/search.svg";
+
+const spin = keyframes`
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+`;
+
+const spinAnimation = css`
+  animation: ${spin} 1s linear infinite;
+`;
 
 const SearchContainer = styled.div`
   display: flex;
@@ -86,12 +102,35 @@ const SearchButton = styled(Button)`
   }
 `;
 
+const LoadingSpinner = styled.span`
+  display: block;
+  position: absolute;
+  top: 21px;
+  right: 16px;
+  width: 24px;
+  height: 24px;
+  pointer-events: none;
+
+  &::after {
+    content: "";
+    display: block;
+    width: calc(24px - 2px);
+    height: calc(24px - 2px);
+    border: 2px solid #e7e7e7;
+    border-radius: 50%;
+    border-right-color: #1273c4;
+
+    ${spinAnimation};
+  }
+`;
+
 export const Search: React.FC = () => {
   const [searchState, setQuery] = useSearch("");
   const [value, setValue] = useState("");
 
-  // const showSpinner = !searchState.data && !searchState.error;
   const showSuggestions = value.length >= 2;
+  const showSpinner =
+    showSuggestions && !searchState.data && !searchState.error;
 
   return (
     <SearchContainer>
@@ -105,6 +144,7 @@ export const Search: React.FC = () => {
             setQuery(value);
           }}
         />
+        {showSpinner ? <LoadingSpinner /> : null}
         {showSuggestions ? <Suggestions searchState={searchState} /> : null}
       </SearchInputContainer>
       <SearchButton>Search</SearchButton>

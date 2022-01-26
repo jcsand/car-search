@@ -105,7 +105,9 @@ export const useSearch = (
         }
 
         const data = (await response.json()) as SearchResults;
-        const { results: { docs } } = data;
+        const {
+          results: { docs }
+        } = data;
         cache.current[url] = docs;
         if (cancelRequest.current) {
           return;

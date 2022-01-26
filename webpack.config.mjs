@@ -16,7 +16,9 @@ export default {
     main: [join(rootDir, "src", "index.tsx")]
   },
   output: {
-    clean: true,
+    clean: {
+      keep: /profile.json/
+    },
     path: join(rootDir, "dist"),
     filename: "[name].[contenthash].js"
   },
@@ -27,7 +29,7 @@ export default {
     plugins.htmlWebpackPlugin(rootDir),
     plugins.prettierPlugin(),
     plugins.eslintPlugin(rootDir),
-    plugins.stylelintPlugin(rootDir),
+    // plugins.stylelintPlugin(rootDir),
     plugins.miniCssExtractPlugin()
   ],
   resolve: {

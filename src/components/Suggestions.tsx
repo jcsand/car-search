@@ -3,13 +3,34 @@ import type { SearchState } from "../hooks/useSearch";
 
 import React from "react";
 import styled from "@emotion/styled";
+import { css, keyframes } from "@emotion/react";
 
 const PLACE_TYPE_MAP: Record<string, string> = {
   A: "Airport",
   C: "City",
   D: "District",
-  T: "Station"
+  F: "Region",
+  G: "Area",
+  I: "Region",
+  P: "Region",
+  T: "Station",
+  W: "Country",
+  Z: "Place"
 };
+
+const fadeIn = keyframes`
+from {
+  opacity: 0;
+}
+
+to {
+  opacity: 1;
+}
+`;
+
+const fadeInAnimation = css`
+  animation: ${fadeIn} 0.5s;
+`;
 
 const SuggestionsContainer = styled.ul`
   position: absolute;
@@ -21,6 +42,8 @@ const SuggestionsContainer = styled.ul`
   background: #fff;
   box-shadow: 0 calc(4px / 2) calc(4px * 2) rgb(0 0 0 / 16%);
   color: #1a1a1a;
+
+  ${fadeInAnimation}
 `;
 
 const Suggestion = styled.li`
@@ -57,9 +80,25 @@ const SuggestionBadge = styled.span`
     background: #008009;
   }
 
+  &.region {
+    background: #f1c74c;
+    color: #222;
+    border-color: #f1c74c;
+  }
+
   &.airport {
     background: #ff8000;
     color: #262626;
+  }
+
+  &.country {
+    background: #116d8a;
+  }
+
+  &.area,
+  &.place {
+    background: #262626;
+    border-color: #262626;
   }
 `;
 

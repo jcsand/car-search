@@ -88,3 +88,13 @@ export const Header: React.FC = () => (
     </HeaderFlexContainer>
   </StyledHeader>
 );
+
+// <div
+//   data-testid="input-text-searchbox-toolbox-fts-end-slot"
+//   class="bgui-c-input-text__side bgui-c-input-text__side--end"
+// >
+//   <span
+//     data-testid="searchbox-toolbox-fts-input-loading-spinner"
+//     class="bgui-c-spinner bgui-c-spinner--medium"
+//   ></span>
+// </div>;
