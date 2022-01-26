@@ -2,7 +2,6 @@
 import React from "react";
 import styled from "@emotion/styled";
 
-// TODO: animation: fadeIn 0.5s;
 const SuggestionsContainer = styled.ul`
   position: absolute;
   top: calc(100% + 4px);
@@ -27,7 +26,7 @@ const Suggestion = styled.li`
   }
 `;
 
-// TODO: is span right?
+// TODO: hmmm span
 const SuggestionBadge = styled.span`
   display: inline-block;
   min-width: 5.1rem;
@@ -109,9 +108,9 @@ export const Suggestions: React.FC = () => {
   const suggestions = TEST_DATA;
 
   return (
-    <SuggestionsContainer>
-      {suggestions.map(({ badge, title, subtext }) => (
-        <Suggestion>
+    <SuggestionsContainer role="listbox">
+      {suggestions.map(({ badge, title, subtext }, i) => (
+        <Suggestion key={i}>
           <SuggestionBadge className={badge.toLowerCase()}>
             {badge}
           </SuggestionBadge>

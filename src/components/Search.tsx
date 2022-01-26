@@ -33,7 +33,7 @@ const SearchContainer = styled.div`
   }
 `;
 
-const HeroSearchInput = styled.input`
+const SearchInput = styled.input`
   width: 100%;
   height: 64px;
   padding: calc(4px * 2);
@@ -91,12 +91,13 @@ export const Search: React.FC = () => {
   return (
     <SearchContainer>
       <SearchInputContainer>
-        <HeroSearchInput
+        <SearchInput
+          aria-label="Pick-up Location"
           placeholder="Pick-up Location"
           value={value}
           onChange={({ target: { value } }) => setValue(value)}
         />
-        {value ? <Suggestions /> : <></>}
+        {value?.length > 1 ? <Suggestions /> : <></>}
       </SearchInputContainer>
       <SearchButton>Search</SearchButton>
     </SearchContainer>

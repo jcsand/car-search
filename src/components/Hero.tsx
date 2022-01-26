@@ -26,7 +26,7 @@ const HeroGradientOverlay = styled.div`
   background: linear-gradient(#1879ca, rgb(24 121 202 / 0%));
 `;
 
-const HeaderFlexContainer = styled.div`
+const HeroFlexContainer = styled.div`
   display: flex;
   flex-direction: column;
   max-width: 1142px;
@@ -71,7 +71,7 @@ const HeroListItem = styled.li`
 export const Hero: React.FC = () => (
   <StyledHero color="foreground" bg="background">
     <HeroGradientOverlay>
-      <HeaderFlexContainer>
+      <HeroFlexContainer>
         <HeroHeader>Car Hire – Search, Compare &amp; Save</HeroHeader>
         <HeroList>
           <HeroListItem>Free cancellations on most bookings</HeroListItem>
@@ -79,7 +79,7 @@ export const Hero: React.FC = () => (
           <HeroListItem>Customer support in 40+ languages</HeroListItem>
         </HeroList>
         <Search />
-      </HeaderFlexContainer>
+      </HeroFlexContainer>
     </HeroGradientOverlay>
   </StyledHero>
 );

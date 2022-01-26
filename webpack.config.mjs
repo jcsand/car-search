@@ -14,6 +14,7 @@ export default {
     main: [join(rootDir, "src", "index.tsx")]
   },
   output: {
+    clean: true,
     path: join(rootDir, "dist"),
     filename: "[name].[contenthash].js"
   },

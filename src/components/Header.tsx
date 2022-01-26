@@ -60,8 +60,8 @@ const HeaderManageBookingButton = styled(Button)`
 
   &:hover,
   &:focus {
-    background-color: rgb(#1273c4 / 6%);
-    background-image: linear-gradient(rgb(#1273c4 / 6%), rgb(#1273c4 / 6%)),
+    background-color: #1273c40f;
+    background-image: linear-gradient(#1273c40f, #1273c40f),
       linear-gradient(#fff, #fff);
   }
 `;
