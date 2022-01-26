@@ -4,6 +4,8 @@ import { color, ColorProps } from "styled-system";
 import styled from "@emotion/styled";
 import { Box, Flex } from "reflexbox";
 
+import { Button } from "@components/Button";
+
 // TODO: think about importing these properly
 const RENTAL_CARS_LOGO =
   "https://cdn.rcstatic.com/images/site_graphics/newsite/mobile/logos/rc-logo-small--white.svg";
@@ -34,21 +36,9 @@ const HeaderLogo = styled.img`
   border-style: none;
 `;
 
-const LanguageButton = styled.button`
+const LanguageButton = styled(Button)`
   margin-left: calc(4px * 2);
-  padding: calc(4px * 2);
-  border: 1px solid transparent;
   background: none;
-  color: #fff;
-  font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, Helvetica,
-    Arial, sans-serif;
-  font-size: 14px;
-  cursor: pointer;
-
-  &:focus {
-    outline: none;
-    box-shadow: 0 0 0 3px rgb(255 255 255 / 24%);
-  }
 `;
 
 const LanguageFlagImage = styled.img`
@@ -58,38 +48,25 @@ const LanguageFlagImage = styled.img`
   border-radius: 50%;
 `;
 
-const HeaderManageBookingButton = styled.button`
+const HeaderManageBookingButton = styled(Button)`
   min-height: 44px;
   padding: calc(4px * 2) calc(4px * 4);
-  border: 1px solid transparent;
   border-radius: 4px;
   border-color: currentcolor;
   background-color: #fff;
   color: #1273c4;
-  font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, Helvetica,
-    Arial, sans-serif;
-  font-size: 14px;
   line-height: calc(4px + 44px / 2);
   text-decoration: none;
-  cursor: pointer;
 
   &:hover,
   &:focus {
-    background-color: rgb(18 115 196 / 6%);
-    background-image: linear-gradient(
-        rgb(18 115 196 / 6%),
-        rgb(18 115 196 / 6%)
-      ),
-      linear-gradient(rgb(255 255 255), rgb(255 255 255));
-  }
-
-  &:focus {
-    outline: none;
-    box-shadow: 0 0 0 3px rgb(255 255 255 / 24%);
+    background-color: rgb(#1273c4 / 6%);
+    background-image: linear-gradient(rgb(#1273c4 / 6%), rgb(#1273c4 / 6%)),
+      linear-gradient(#fff, #fff);
   }
 `;
 
-export const Header = (): React.ReactElement => (
+export const Header: React.FC = () => (
   <StyledHeader color="foreground" bg="background">
     <HeaderFlexContainer>
       <Box flexGrow={1}>

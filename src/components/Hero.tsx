@@ -3,15 +3,16 @@ import React from "react";
 import { color, ColorProps } from "styled-system";
 import styled from "@emotion/styled";
 
+import { Search } from "@components/Search";
+
 import checkmarkIcon from "@assets/checkmark.svg";
-import searchIcon from "@assets/search.svg";
 
 // TODO: Import properly
 const HERO_BACKGROUND_IMAGE =
   "https://cdn2.rcstatic.com/com.rentalcars.185492029745.eu-west-1.web.prod.static-live/images/landing-pages/home/background-large.jpg";
 
 const StyledHero = styled.div<ColorProps>`
-  height: min(calc(-260px + 100vh), 596px);
+  height: min(calc(-268px + 100vh), 596px);
   min-height: 290px;
   background-image: url(${HERO_BACKGROUND_IMAGE});
   background-position: 50%;
@@ -67,77 +68,7 @@ const HeroListItem = styled.li`
   }
 `;
 
-const HeroSearchContainer = styled.div`
-  display: flex;
-  position: relative;
-  margin: calc(4px * 4) 0;
-  padding: 4px;
-  border-radius: calc(4px * 3);
-  background: #ffb700;
-  box-shadow: 0 calc(4px / 2) calc(4px * 3) rgb(0 0 0 / 16%);
-
-  &::before {
-    content: "";
-    display: inline-block;
-    position: absolute;
-    top: calc(4px * 4);
-    left: calc(4px * 5);
-    width: calc(4px * 4);
-    height: calc(4px * 4);
-    margin-top: calc(4px * 3);
-    margin-right: calc(4px * 2);
-    background: url("${searchIcon}");
-    background-position: center;
-    background-size: cover;
-  }
-`;
-
-const HeroSearchInput = styled.input`
-  flex-grow: 1;
-  height: 64px;
-  margin-right: 4px;
-  padding: calc(4px * 2);
-  padding-left: 44px;
-  border: none;
-  border-radius: calc(4px * 2) calc(4px / 2) calc(4px / 2) calc(4px * 2);
-  color: #1a1a1a;
-  font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, Helvetica,
-    Arial, sans-serif;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 24px;
-
-  &::placeholder {
-    color: #949494;
-  }
-
-  &:focus {
-    outline-style: none;
-    box-shadow: 0 0 0 3px rgb(18 115 196 / 24%);
-  }
-`;
-
-const HeroSearchButton = styled.button`
-  height: 64px;
-  padding: calc(4px * 2) calc(4px * 4);
-  border: 1px solid transparent;
-  border-radius: calc(4px / 2) calc(4px * 2) calc(4px * 2) calc(4px / 2);
-  background-color: #068323;
-  color: #fff;
-  font-family: "Avenir Next", BlinkMacSystemFont, -apple-system, "Segoe UI",
-    Roboto, Helvetica, Arial, sans-serif;
-  font-size: 20px;
-  font-weight: 700;
-  line-height: 28px;
-  cursor: pointer;
-
-  &:focus,
-  &:hover {
-    background-color: #0d6521;
-  }
-`;
-
-export const SearchHero = (): React.ReactElement => (
+export const Hero: React.FC = () => (
   <StyledHero color="foreground" bg="background">
     <HeroGradientOverlay>
       <HeaderFlexContainer>
@@ -147,10 +78,7 @@ export const SearchHero = (): React.ReactElement => (
           <HeroListItem>60,000+ locations</HeroListItem>
           <HeroListItem>Customer support in 40+ languages</HeroListItem>
         </HeroList>
-        <HeroSearchContainer>
-          <HeroSearchInput placeholder="Pick-up Location" />
-          <HeroSearchButton>Search</HeroSearchButton>
-        </HeroSearchContainer>
+        <Search />
       </HeaderFlexContainer>
     </HeroGradientOverlay>
   </StyledHero>

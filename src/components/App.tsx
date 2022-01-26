@@ -2,7 +2,7 @@ import React from "react";
 import { ThemeProvider } from "@emotion/react";
 
 import { Header } from "@components/Header";
-import { SearchHero } from "@components/SearchHero";
+import { Hero } from "@components/Hero";
 
 import "../assets/reset.css";
 import "../assets/base.css";
@@ -14,9 +14,9 @@ const theme = {
   }
 };
 
-export const App = (): React.ReactElement => (
+export const App: React.FC = () => (
   <ThemeProvider theme={theme}>
     <Header />
-    <SearchHero />
+    <Hero />
   </ThemeProvider>
 );
