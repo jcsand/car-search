@@ -54,7 +54,7 @@ describe("App Spec", () => {
     expect(() => screen.getByRole("listbox")).toThrow();
   });
 
-  // TODO: verify-it?
+  // TODO: consider verify-it?
   it("shows results for a two or more search characters", async () => {
     const expectedPlaceholder = "Pick-up Location";
     render(<App />);
@@ -114,5 +114,23 @@ describe("App Spec", () => {
     await fireEvent.change(searchInput, { target: { value: "m" } });
 
     expect(() => screen.getByRole("listbox")).toThrow();
+  });
+
+  it("replaces search query on suggestion click", async () => {
+    const expectedPlaceholder = "Pick-up Location";
+    render(<App />);
+
+    await waitFor(() => screen.getByLabelText(expectedPlaceholder));
+    const searchInput = screen.getByLabelText(expectedPlaceholder);
+
+    await fireEvent.change(searchInput, { target: { value: "manchester" } });
+    await waitFor(() => screen.getByRole("listbox"));
+
+    const firstSuggestion = screen.getByRole("listbox").children[0];
+    await fireEvent.click(firstSuggestion, new MouseEvent('click'));
+
+    await waitFor(() => screen.getByLabelText('Manchester Airport (MAN), Manchester, United Kingdom'));
+    
+    expect(searchInput).toHaveTextContent('Manchester Airport (MAN), Manchester, United Kingdom');
   });
 });

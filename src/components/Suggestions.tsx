@@ -71,32 +71,32 @@ const SuggestionBadge = styled.span`
   line-height: 1rem;
   text-align: center;
 
-  &.city,
-  &.station {
+  &.badge--city,
+  &.badge--station {
     background: #0071c2;
   }
 
-  &.district {
+  &.badge--district {
     background: #008009;
   }
 
-  &.region {
+  &.badge--region {
     background: #f1c74c;
     color: #222;
     border-color: #f1c74c;
   }
 
-  &.airport {
+  &.badge--airport {
     background: #ff8000;
     color: #262626;
   }
 
-  &.country {
+  &.badge--country {
     background: #116d8a;
   }
 
-  &.area,
-  &.place {
+  &.badge--area,
+  &.badge--place {
     background: #262626;
     border-color: #262626;
   }
@@ -140,8 +140,13 @@ export const Suggestions: React.FC<SuggestionsProps> = ({ searchState }) => {
           .join(", ");
 
         return (
-          <Suggestion key={i}>
-            <SuggestionBadge className={badge?.toLowerCase()}>
+          <Suggestion
+            key={i}
+            onClick={() => {
+              alert("TODO");
+            }}
+          >
+            <SuggestionBadge className={`badge--${badge?.toLowerCase()}`}>
               {badge || suggestion.placeType}
             </SuggestionBadge>
             <SuggestionContent>
