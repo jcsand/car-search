@@ -1,21 +1,21 @@
 name: Static publish to gh-pages
 
-on: 
+on:
   workflow_dispatch:
   repository_dispatch:
   push:
     branches:
       - master
 
-jobs: 
+jobs:
   build:
     runs-on: ubuntu-latest
-    steps: 
+    steps:
       - uses: actions/checkout@v2
       - name: use Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '16.x'
+          node-version: "16.x"
       - run: yarn
       - run: yarn build
       - run: yarn test

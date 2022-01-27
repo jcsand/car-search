@@ -19,6 +19,9 @@
     "lint:stylelint": "stylelint --ignore-path .gitignore '**/*.{css,html,tsx}'",
     "lint:stylelint:fix": "yarn lint:stylelint --fix"
   },
+  "simple-git-hooks": {
+    "pre-commit": "yarn lint"
+  },
   "author": "",
   "license": "ISC",
   "devDependencies": {
@@ -74,6 +77,7 @@
     "react-dom": "^17.0.2",
     "reflexbox": "^4.0.6",
     "serve": "^13.0.2",
+    "simple-git-hooks": "^2.7.0",
     "source-map": "^0.7.3",
     "styled-system": "^5.1.5",
     "stylelint": "^14.3.0",

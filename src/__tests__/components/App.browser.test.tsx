@@ -1,5 +1,5 @@
 import puppeteer, { Browser, Page } from "puppeteer";
-import jestDevServer from 'jest-dev-server';
+import jestDevServer from "jest-dev-server";
 
 describe("App component browser tests", () => {
   let browser: Browser, page: Page;
@@ -10,14 +10,14 @@ describe("App component browser tests", () => {
     browser = await puppeteer.launch();
     page = await browser.newPage();
     await jestDevServer.setup({
-      command: 'yarn serve:with-build',
+      command: "yarn serve:with-build",
       port: 3000,
       launchTimeout: 20_000
-    })
+    });
   });
 
   afterAll(async () => {
-    browser.close()
+    browser.close();
     await jestDevServer.teardown();
   });
 
@@ -32,13 +32,10 @@ describe("App component browser tests", () => {
 
     await page.goto("http://localhost:3000");
     await page.waitForSelector("header");
-    
-    const text = await page.$eval(
-      "h2",
-      (e) => e.textContent
-    )
-    
-    expect(text).toContain('Car Hire – Search, Compare & Save')
+
+    const text = await page.$eval("h2", (e) => e.textContent);
+
+    expect(text).toContain("Car Hire – Search, Compare & Save");
   });
 
   it("renders with menu icon on small display", async () => {
@@ -54,13 +51,13 @@ describe("App component browser tests", () => {
     await page.waitForSelector(`header button > img[alt="Menu Icon"]`, {
       visible: true
     });
-    
+
     const styles = await page.$$eval(
       `header button > img:not([alt="Menu Icon"])`,
       (elems) => elems.map((e) => window.getComputedStyle(e))
-    )
-    
+    );
+
     expect(styles.length).toBe(1);
-    expect(styles[0].display).not.toBe('block');
+    expect(styles[0].display).not.toBe("block");
   });
 });
