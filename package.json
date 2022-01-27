@@ -102,6 +102,7 @@
       "^@@src(.*)$": "<rootDir>/src/$1",
       "^@@assets(.*)$": "<rootDir>/src/assets$1",
       "^@@icons(.*)$": "<rootDir>/src/assets/icons$1",
+      "^@@images(.*)$": "<rootDir>/src/assets/images$1",
       "^@@styles(.*)$": "<rootDir>/src/assets/styles$1",
       "^@@components(.*)$": "<rootDir>/src/components$1",
       "^@@hooks(.*)$": "<rootDir>/src/hooks$1"

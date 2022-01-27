@@ -7,14 +7,10 @@ import facepaint from "facepaint";
 import { Box, Flex } from "reflexbox";
 
 import { Button } from "@@components/Button";
+
 import menuIcon from "@@icons/menu.svg";
-
-// TODO: think about importing these properly
-const RENTAL_CARS_LOGO =
-  "https://cdn.rcstatic.com/images/site_graphics/newsite/mobile/logos/rc-logo-small--white.svg";
-
-const GBP_FLAG =
-  "https://cf.bstatic.com/static/img/flags/new/48-squared/gb.png";
+import rentalcarsLogo from "@@images/rc-logo-small--white.svg";
+import gbFlag from "@@images/gb.png";
 
 const mq = facepaint([
   // "@media(min-width: 480px)",
@@ -50,6 +46,16 @@ const HeaderLogo = styled.img`
   padding-top: calc(4px * 3);
   padding-bottom: calc(4px * 3);
   border-style: none;
+`;
+
+const HeaderLogoLink = styled.a`
+  display: inline-block;
+  margin-top: calc(4px * 1.5);
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgb(255 255 255 / 24%);
+  }
 `;
 
 const LanguageButton = styled(Button)`
@@ -115,15 +121,15 @@ export const Header: React.FC = () => (
   <StyledHeader color="foreground" bg="background">
     <HeaderFlexContainer>
       <Box flexGrow={1}>
-        <a href="/">
-          <HeaderLogo alt="Rentalcars.com Brand Logo" src={RENTAL_CARS_LOGO} />
-        </a>
+        <HeaderLogoLink href="/">
+          <HeaderLogo alt="Rentalcars.com Brand Logo" src={rentalcarsLogo} />
+        </HeaderLogoLink>
       </Box>
       <Box>
         <Flex>
           <LanguageButton>GBP</LanguageButton>
           <LanguageButton>
-            <LanguageFlagImage alt="English Language Icon" src={GBP_FLAG} />
+            <LanguageFlagImage alt="English Language Icon" src={gbFlag} />
           </LanguageButton>
           <MenuButton>
             <MenuImage alt="Menu Icon" src={menuIcon} />
@@ -136,13 +142,3 @@ export const Header: React.FC = () => (
     </HeaderFlexContainer>
   </StyledHeader>
 );
-
-// <div
-//   data-testid="input-text-searchbox-toolbox-fts-end-slot"
-//   class="bgui-c-input-text__side bgui-c-input-text__side--end"
-// >
-//   <span
-//     data-testid="searchbox-toolbox-fts-input-loading-spinner"
-//     class="bgui-c-spinner bgui-c-spinner--medium"
-//   ></span>
-// </div>;

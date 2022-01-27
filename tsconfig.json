@@ -17,6 +17,7 @@
       "@@src/*": ["src/*"],
       "@@assets/*": ["src/assets/*"],
       "@@icons/*": ["src/assets/icons/*"],
+      "@@images/*": ["src/assets/images/*"],
       "@@styles/*": ["src/assets/styles/*"],
       "@@components/*": ["src/components/*"],
       "@@hooks/*": ["src/hooks/*"]

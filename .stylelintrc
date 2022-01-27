@@ -7,7 +7,7 @@
   "overrides": [
     {
       "files": ["**/*.tsx"],
-      "customSyntax": "postcss-styled"
+      "customSyntax": "postcss-jsx"
     },
     {
       "files": ["**/*.html"],

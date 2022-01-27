@@ -4,28 +4,16 @@ import styled from "@emotion/styled";
 import { css, keyframes } from "@emotion/react";
 
 import type { SearchState } from "@@hooks/useSearch";
-
-const PLACE_TYPE_MAP: Record<string, string> = {
-  A: "Airport",
-  C: "City",
-  D: "District",
-  F: "Region",
-  G: "Area",
-  I: "Region",
-  P: "Region",
-  T: "Station",
-  W: "Country",
-  Z: "Place"
-};
+import { Suggestion } from "@@components/Suggestion";
 
 const fadeIn = keyframes`
-from {
-  opacity: 0;
-}
+  from {
+    opacity: 0;
+  }
 
-to {
-  opacity: 1;
-}
+  to {
+    opacity: 1;
+  }
 `;
 
 const fadeInAnimation = css`
@@ -46,116 +34,35 @@ const SuggestionsContainer = styled.ul`
   ${fadeInAnimation}
 `;
 
-const Suggestion = styled.li`
-  display: flex;
-  align-items: center;
-  padding: calc(4px * 3);
-  cursor: pointer;
-
-  &:hover,
-  [aria-selected="true"] {
-    background: rgb(18 115 196 / 6%);
-  }
-`;
-
-// TODO: hmmm span
-const SuggestionBadge = styled.span`
-  display: inline-block;
-  min-width: 5.1rem;
-  padding: 0.3rem 0;
-  border: none;
-  border-radius: 4px;
-  color: #fff;
-  font-size: 12px;
-  font-weight: 500;
-  line-height: 1rem;
-  text-align: center;
-
-  &.badge--city,
-  &.badge--station {
-    background: #0071c2;
-  }
-
-  &.badge--district {
-    background: #008009;
-  }
-
-  &.badge--region {
-    background: #f1c74c;
-    color: #222;
-    border-color: #f1c74c;
-  }
-
-  &.badge--airport {
-    background: #ff8000;
-    color: #262626;
-  }
-
-  &.badge--country {
-    background: #116d8a;
-  }
-
-  &.badge--area,
-  &.badge--place {
-    background: #262626;
-    border-color: #262626;
-  }
-`;
-
-const SuggestionContent = styled.div`
-  padding-left: calc(4px * 3);
-`;
-
-const SuggestionTitle = styled.p`
-  font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, Helvetica,
-    Arial, sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 20px;
-`;
-
-const SuggestionSubtext = styled.p`
-  color: #474747;
-  font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, Helvetica,
-    Arial, sans-serif;
-  font-size: 12px;
-  font-weight: 500;
-  line-height: 18px;
-`;
 interface SuggestionsProps {
   searchState?: SearchState;
+  activeItem?: number;
+  setActiveItem: (newValue: number) => void;
+  onSelect: (index: number, newValue: string) => void;
 }
 
-export const Suggestions: React.FC<SuggestionsProps> = ({ searchState }) => {
+export const Suggestions: React.FC<SuggestionsProps> = ({
+  searchState,
+  activeItem,
+  setActiveItem,
+  onSelect
+}) => {
   if (!searchState?.data || searchState.error) {
     return null;
   }
 
   return (
     <SuggestionsContainer role="listbox">
-      {searchState.data.map((suggestion, i) => {
-        const badge = PLACE_TYPE_MAP[suggestion.placeType];
-        const subtext = [suggestion.city, suggestion.region, suggestion.country]
-          .filter((a) => a)
-          .join(", ");
-
-        return (
-          <Suggestion
-            key={i}
-            onClick={() => {
-              alert("TODO");
-            }}
-          >
-            <SuggestionBadge className={`badge--${badge?.toLowerCase()}`}>
-              {badge || suggestion.placeType}
-            </SuggestionBadge>
-            <SuggestionContent>
-              <SuggestionTitle>{suggestion.name}</SuggestionTitle>
-              <SuggestionSubtext>{subtext}</SuggestionSubtext>
-            </SuggestionContent>
-          </Suggestion>
-        );
-      }) || <Suggestion>No results found.</Suggestion>}
+      {searchState.data.map((suggestion, i) => (
+        <Suggestion
+          key={i}
+          id={`search-suggestion-item-${i}`}
+          suggestion={suggestion}
+          active={activeItem === i}
+          setActive={() => setActiveItem(i)}
+          onClick={(value) => onSelect(i, value)}
+        />
+      ))}
     </SuggestionsContainer>
   );
 };

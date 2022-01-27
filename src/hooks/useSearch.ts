@@ -22,6 +22,11 @@ export interface SearchResult {
   lat: number;
 }
 
+export interface HydratedSearchResult extends SearchResult {
+  titleText: string;
+  subtitleText: string;
+  searchText: string;
+}
 export interface SearchResults {
   results: {
     isGooglePowered: boolean;
@@ -31,16 +36,16 @@ export interface SearchResults {
 }
 
 export interface SearchState {
-  data?: SearchResult[];
+  data?: HydratedSearchResult[];
   error?: Error;
 }
 
-type Cache = { [url: string]: SearchResult[] };
+type Cache = { [url: string]: HydratedSearchResult[] };
 
 type SearchAction =
   | { type: "idle" }
   | { type: "loading" }
-  | { type: "fetched"; payload: SearchResult[] }
+  | { type: "fetched"; payload: HydratedSearchResult[] }
   | { type: "error"; payload: Error };
 
 export const BASE_URL = "https://www.rentalcars.com/FTSAutocomplete.do";
@@ -51,6 +56,27 @@ export const buildSearchUrl = (query: string, results = 6): string =>
     solrRows: `${results}`,
     solrTerm: query
   })}`;
+
+const hydrateResult = (result: SearchResult): HydratedSearchResult => {
+  const titleText = `${result.name}${
+    result.placeType === "A" ? ` (${result.iata})` : ""
+  }`;
+
+  const subtitleText = [result.city, result.region, result.country]
+    .filter((a) => a)
+    .join(", ");
+
+  const searchText = `${titleText}, ${result.city || result.region}, ${
+    result.country
+  }`;
+
+  return {
+    ...result,
+    titleText,
+    subtitleText,
+    searchText
+  };
+};
 
 export const useSearch = (
   initialQuery = "",
@@ -108,7 +134,7 @@ export const useSearch = (
         const {
           results: { docs }
         } = data;
-        cache.current[url] = docs;
+        cache.current[url] = docs.map(hydrateResult);
         if (cancelRequest.current) {
           return;
         }

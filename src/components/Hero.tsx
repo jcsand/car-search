@@ -8,6 +8,7 @@ import facepaint from "facepaint";
 import { Search } from "@@components/Search";
 
 import checkmarkIcon from "@@icons/checkmark.svg";
+import heroBackground from "@@images/background-large.jpg";
 
 const mq = facepaint([
   // "@media(min-width: 480px)",
@@ -16,10 +17,6 @@ const mq = facepaint([
   "@media(min-width: 1024px)"
   // "@media(only screen and (min-width: 1024px))"
 ]);
-
-// TODO: Import properly
-const HERO_BACKGROUND_IMAGE =
-  "https://cdn2.rcstatic.com/com.rentalcars.185492029745.eu-west-1.web.prod.static-live/images/landing-pages/home/background-large.jpg";
 
 const StyledHero = styled.div<ColorProps>`
   min-height: 290px;
@@ -30,7 +27,7 @@ const StyledHero = styled.div<ColorProps>`
   ${css(
     mq({
       height: ["auto", "min(calc(-268px + 100vh), 596px)"],
-      backgroundImage: ["none", `url(${HERO_BACKGROUND_IMAGE})`]
+      backgroundImage: ["none", `url(${heroBackground})`]
     })
   )}
 `;

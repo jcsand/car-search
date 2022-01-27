@@ -1,6 +1,11 @@
-import { renderHook } from "@testing-library/react-hooks";
-import { mockRequests } from "../__helpers__";
-import { useSearch, buildSearchUrl, BASE_URL } from "@@hooks/useSearch";
+import { act, renderHook } from "@testing-library/react-hooks";
+import { mockRequests, delay } from "../__helpers__";
+import {
+  useSearch,
+  buildSearchUrl,
+  BASE_URL,
+  HydratedSearchResult
+} from "@@hooks/useSearch";
 
 describe("buildSearchUrl", () => {
   it("correctly builds a search URL", () => {
@@ -51,7 +56,49 @@ describe("useSearch Hook", () => {
     });
   });
 
-  // TODO: no query does nothing
-  // TODO: less than 2 chars does nothing
-  // TODO: test cache doesn't make request
+  it("does not make a request without a query", async () => {
+    const { result } = renderHook(() => useSearch(""));
+
+    await delay(500);
+
+    expect(result.current[0].data).toBeUndefined();
+  });
+
+  it("does not make a request with less than 2 characters", async () => {
+    const { result } = renderHook(() => useSearch("m"));
+
+    await delay(500);
+
+    expect(result.current[0].data).toBeUndefined();
+  });
+
+  it("makes a request when queried via dispatch function", async () => {
+    const { result, waitForNextUpdate } = renderHook(() => useSearch(""));
+
+    await delay(500);
+
+    expect(result.current[0].data).toBeUndefined();
+
+    act(() => {
+      result.current[1]("manchester");
+    });
+
+    await waitForNextUpdate();
+    expect(result.current[0].data?.length).toBe(6);
+  });
+
+  it("hydrates results of a successful query", async () => {
+    const { result, waitForNextUpdate } = renderHook(() =>
+      useSearch("manchester")
+    );
+
+    await waitForNextUpdate();
+
+    const [firstResult] = result?.current[0]?.data as HydratedSearchResult[];
+    expect(firstResult).toMatchObject({
+      searchText: "Manchester Airport (MAN), Manchester, United Kingdom",
+      subtitleText: "Manchester, Greater Manchester, United Kingdom",
+      titleText: "Manchester Airport (MAN)"
+    });
+  });
 });

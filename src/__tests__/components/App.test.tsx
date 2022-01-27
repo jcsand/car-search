@@ -4,7 +4,7 @@ import "@testing-library/jest-dom";
 import { mockRequests } from "../__helpers__";
 import { App } from "@@components/App";
 
-describe("App Spec", () => {
+describe("App component spec", () => {
   mockRequests();
 
   it("loads initial hero", async () => {
@@ -110,27 +110,5 @@ describe("App Spec", () => {
     expect(screen.getByRole("listbox").children[0]).toBeInstanceOf(
       HTMLLIElement
     );
-
-    await fireEvent.change(searchInput, { target: { value: "m" } });
-
-    expect(() => screen.getByRole("listbox")).toThrow();
-  });
-
-  it("replaces search query on suggestion click", async () => {
-    const expectedPlaceholder = "Pick-up Location";
-    render(<App />);
-
-    await waitFor(() => screen.getByLabelText(expectedPlaceholder));
-    const searchInput = screen.getByLabelText(expectedPlaceholder);
-
-    await fireEvent.change(searchInput, { target: { value: "manchester" } });
-    await waitFor(() => screen.getByRole("listbox"));
-
-    const firstSuggestion = screen.getByRole("listbox").children[0];
-    await fireEvent.click(firstSuggestion, new MouseEvent('click'));
-
-    await waitFor(() => screen.getByLabelText('Manchester Airport (MAN), Manchester, United Kingdom'));
-    
-    expect(searchInput).toHaveTextContent('Manchester Airport (MAN), Manchester, United Kingdom');
   });
 });

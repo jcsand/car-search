@@ -18,16 +18,23 @@ export default {
       keep: /profile.json/
     },
     path: join(rootDir, "dist"),
-    filename: "[name].[contenthash].js"
+    filename: "[name].[contenthash].js",
+    assetModuleFilename: "assets/[hash][ext][query]"
   },
   module: {
-    rules: [rules.typescriptRule, rules.htmlRule, rules.cssRule, rules.svgRule]
+    rules: [
+      rules.typescriptRule,
+      rules.htmlRule,
+      rules.cssRule,
+      rules.svgRule,
+      rules.imageRule
+    ]
   },
   plugins: [
     plugins.htmlWebpackPlugin(rootDir),
     plugins.prettierPlugin(),
     plugins.eslintPlugin(rootDir),
-    // plugins.stylelintPlugin(rootDir), // TODO: figure out why this is crashing
+    plugins.stylelintPlugin(rootDir), // TODO: figure out why styled postcss-styled is crashing
     plugins.miniCssExtractPlugin()
   ],
   resolve: {
@@ -35,9 +42,10 @@ export default {
       "@@src": join(rootDir, "src"),
       "@@assets": join(rootDir, "src", "assets"),
       "@@icons": join(rootDir, "src", "assets", "icons"),
+      "@@images": join(rootDir, "src", "assets", "images"),
       "@@styles": join(rootDir, "src", "assets", "styles"),
       "@@components": join(rootDir, "src", "components"),
-      "@@hooks": join(rootDir, "src", "hooks"),
+      "@@hooks": join(rootDir, "src", "hooks")
     },
     extensions: [".tsx", ".ts", ".js", ".jsx"]
   },
