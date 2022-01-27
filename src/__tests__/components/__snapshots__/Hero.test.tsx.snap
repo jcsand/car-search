@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Hero component renders matching snapshot 1`] = `
+<body>
+  <div>
+    <div
+      class="css-al1uuz"
+      color="foreground"
+    >
+      <div
+        class="css-3mc4v6"
+      >
+        <div
+          class="css-cevxc4"
+        >
+          <h2
+            class="css-76v7hz"
+          >
+            Car Hire – Search, Compare & Save
+          </h2>
+          <ul
+            class="css-1gzi17z"
+          >
+            <li
+              class="css-tasv40"
+            >
+              Free cancellations on most bookings
+            </li>
+            <li
+              class="css-tasv40"
+            >
+              60,000+ locations
+            </li>
+            <li
+              class="css-tasv40"
+            >
+              Customer support in 40+ languages
+            </li>
+          </ul>
+          <div
+            class="css-mv11ig"
+          >
+            <div
+              class="css-oz4kv0"
+            >
+              <input
+                aria-label="Pick-up Location"
+                class="css-ls0vk8"
+                placeholder="Pick-up Location"
+                value=""
+              />
+            </div>
+            <button
+              class="css-o225nb"
+            >
+              Search
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;

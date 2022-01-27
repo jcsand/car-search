@@ -1,0 +1,127 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App component spec renders matching snapshot 1`] = `
+<body>
+  <div>
+    <header
+      class="css-1mjxcjf"
+      color="foreground"
+    >
+      <div
+        class="css-ik3yhu"
+      >
+        <div
+          class="css-wcquo4"
+        >
+          <a
+            class="css-2b6wk5"
+            href="/"
+          >
+            <img
+              alt="Rentalcars.com Brand Logo"
+              class="css-1syunqi"
+              src="test-file-stub"
+            />
+          </a>
+        </div>
+        <div
+          class="css-vurnku"
+        >
+          <div
+            class="css-4cffwv"
+          >
+            <button
+              class="css-1kju424"
+            >
+              GBP
+            </button>
+            <button
+              class="css-1kju424"
+            >
+              <img
+                alt="English Language Icon"
+                class="css-1aqz85s"
+                src="test-file-stub"
+              />
+            </button>
+            <button
+              class="css-13ak2ob"
+            >
+              <img
+                alt="Menu Icon"
+                class="css-rsrytf"
+                src="test-file-stub"
+              />
+            </button>
+          </div>
+        </div>
+        <div
+          class="css-1j2g464"
+        >
+          <button
+            class="css-1a6r96u"
+          >
+            Manage booking
+          </button>
+        </div>
+      </div>
+    </header>
+    <div
+      class="css-1d1n8lg"
+      color="foreground"
+    >
+      <div
+        class="css-3mc4v6"
+      >
+        <div
+          class="css-cevxc4"
+        >
+          <h2
+            class="css-76v7hz"
+          >
+            Car Hire – Search, Compare & Save
+          </h2>
+          <ul
+            class="css-1gzi17z"
+          >
+            <li
+              class="css-tasv40"
+            >
+              Free cancellations on most bookings
+            </li>
+            <li
+              class="css-tasv40"
+            >
+              60,000+ locations
+            </li>
+            <li
+              class="css-tasv40"
+            >
+              Customer support in 40+ languages
+            </li>
+          </ul>
+          <div
+            class="css-mv11ig"
+          >
+            <div
+              class="css-oz4kv0"
+            >
+              <input
+                aria-label="Pick-up Location"
+                class="css-ls0vk8"
+                placeholder="Pick-up Location"
+                value=""
+              />
+            </div>
+            <button
+              class="css-o225nb"
+            >
+              Search
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;

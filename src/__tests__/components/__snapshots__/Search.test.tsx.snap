@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Search component renders matching snapshot 1`] = `
+<body>
+  <div>
+    <div
+      class="css-mv11ig"
+    >
+      <div
+        class="css-oz4kv0"
+      >
+        <input
+          aria-label="Pick-up Location"
+          class="css-ls0vk8"
+          placeholder="Pick-up Location"
+          value=""
+        />
+      </div>
+      <button
+        class="css-o225nb"
+      >
+        Search
+      </button>
+    </div>
+  </div>
+</body>
+`;

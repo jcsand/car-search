@@ -7,14 +7,9 @@ import { App } from "@@components/App";
 describe("App component spec", () => {
   mockRequests();
 
-  it("loads initial hero", async () => {
-    render(<App />);
-
-    await waitFor(() => screen.getByRole("heading"));
-
-    expect(screen.getByRole("heading")).toHaveTextContent(
-      "Car Hire – Search, Compare & Save"
-    );
+  it("renders matching snapshot", async () => {
+    const rendered = render(<App />);
+    expect(rendered.baseElement).toMatchSnapshot();
   });
 
   it("has a search input labelled 'Pick-up Location'", async () => {

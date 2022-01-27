@@ -3,14 +3,20 @@ import { render, fireEvent, waitFor, screen } from "@testing-library/react";
 import { getAllByRole } from "@testing-library/dom";
 import "@testing-library/jest-dom";
 import { mockRequests } from "../__helpers__";
-import { App } from "@@components/App";
+import { Search } from "@@components/Search";
 
 describe("Search component", () => {
   mockRequests();
 
+  it("renders matching snapshot", async () => {
+    const rendered = render(<Search />);
+    expect(rendered.baseElement).toMatchSnapshot();
+  });
+
+
   it("replaces search query on suggestion click", async () => {
     const expectedPlaceholder = "Pick-up Location";
-    render(<App />);
+    render(<Search />);
 
     await waitFor(() => screen.getByLabelText(expectedPlaceholder));
     const searchInput = screen.getByLabelText(expectedPlaceholder);
@@ -30,7 +36,7 @@ describe("Search component", () => {
 
   it("navigates the search suggestions when using arrow keys", async () => {
     const expectedPlaceholder = "Pick-up Location";
-    render(<App />);
+    render(<Search />);
 
     const searchInput = await waitFor(() =>
       screen.getByLabelText(expectedPlaceholder)
@@ -66,7 +72,7 @@ describe("Search component", () => {
 
   it("should select the currently selected suggestion on enter press", async () => {
     const expectedPlaceholder = "Pick-up Location";
-    render(<App />);
+    render(<Search />);
 
     const searchInput = await waitFor(() =>
       screen.getByLabelText(expectedPlaceholder)

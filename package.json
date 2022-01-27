@@ -11,11 +11,11 @@
     "lint": "run-s -c lint:prettier lint:eslint lint:stylelint",
     "lint:fix": "run-s -c lint:prettier:fix lint:eslint:fix lint:stylelint:fix",
     "lint:eslint": "eslint --ignore-path .gitignore .",
-    "lint:eslint:fix": "npm run -s lint:eslint -- --fix",
+    "lint:eslint:fix": "yarn lint:eslint --fix",
     "lint:prettier": "prettier --ignore-path .gitignore --check .",
     "lint:prettier:fix": "prettier --ignore-path .gitignore --write .",
     "lint:stylelint": "stylelint --ignore-path .gitignore '**/*.{css,html,tsx}'",
-    "lint:stylelint:fix": "npm run -s lint:stylelint -- --fix"
+    "lint:stylelint:fix": "yarn lint:stylelint --fix"
   },
   "author": "",
   "license": "ISC",
