@@ -6,8 +6,6 @@ import * as rules from "./webpack/rules.mjs";
 
 const rootDir = dirname(fileURLToPath(import.meta.url));
 
-// TODO: analyzer
-
 export default {
   context: rootDir,
   target: ["web", "es5"],
@@ -29,13 +27,17 @@ export default {
     plugins.htmlWebpackPlugin(rootDir),
     plugins.prettierPlugin(),
     plugins.eslintPlugin(rootDir),
-    // plugins.stylelintPlugin(rootDir),
+    // plugins.stylelintPlugin(rootDir), // TODO: figure out why this is crashing
     plugins.miniCssExtractPlugin()
   ],
   resolve: {
     alias: {
-      "@assets": join(rootDir, "src", "assets"),
-      "@components": join(rootDir, "src", "components")
+      "@@src": join(rootDir, "src"),
+      "@@assets": join(rootDir, "src", "assets"),
+      "@@icons": join(rootDir, "src", "assets", "icons"),
+      "@@styles": join(rootDir, "src", "assets", "styles"),
+      "@@components": join(rootDir, "src", "components"),
+      "@@hooks": join(rootDir, "src", "hooks"),
     },
     extensions: [".tsx", ".ts", ".js", ".jsx"]
   },

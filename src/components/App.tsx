@@ -1,11 +1,11 @@
 import React from "react";
 import { ThemeProvider } from "@emotion/react";
 
-import { Header } from "@components/Header";
-import { Hero } from "@components/Hero";
+import { Header } from "@@components/Header";
+import { Hero } from "@@components/Hero";
 
-import "@assets/reset.css";
-import "@assets/base.css";
+import "@@styles/reset.css";
+import "@@styles/base.css";
 
 const theme = {
   colors: {

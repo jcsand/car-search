@@ -14,10 +14,12 @@
     "baseUrl": "./",
     "rootDir": "./",
     "paths": {
-      "@src/*": ["src/*"],
-      "@assets/*": ["src/assets/*"],
-      "@components/*": ["src/components/*"],
-      "@hooks/*": ["src/hooks/*"]
+      "@@src/*": ["src/*"],
+      "@@assets/*": ["src/assets/*"],
+      "@@icons/*": ["src/assets/icons/*"],
+      "@@styles/*": ["src/assets/styles/*"],
+      "@@components/*": ["src/components/*"],
+      "@@hooks/*": ["src/hooks/*"]
     },
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,

@@ -3,12 +3,21 @@
 import React, { useState } from "react";
 import styled from "@emotion/styled";
 import { css, keyframes } from "@emotion/react";
+import facepaint from "facepaint";
 
-import { Button } from "@components/Button";
-import { Suggestions } from "@components/Suggestions";
-import { useSearch } from "../hooks/useSearch";
+import { Button } from "@@components/Button";
+import { Suggestions } from "@@components/Suggestions";
+import { useSearch } from "@@hooks/useSearch";
 
-import searchIcon from "@assets/search.svg";
+import searchIcon from "@@icons/search.svg";
+
+const mq = facepaint([
+  // "@media(min-width: 480px)",
+  // "@media(min-width: 576px)",
+  // "@media(min-width: 768px)",
+  "@media(min-width: 1024px)"
+  // "@media(only screen and (min-width: 1024px))"
+]);
 
 const spin = keyframes`
   from {
@@ -48,6 +57,12 @@ const SearchContainer = styled.div`
     background-position: center;
     background-size: cover;
   }
+
+  ${css(
+    mq({
+      flexDirection: ["column", "row"]
+    })
+  )}
 `;
 
 const SearchInput = styled.input`
@@ -56,7 +71,6 @@ const SearchInput = styled.input`
   padding: calc(4px * 2);
   padding-left: 44px;
   border: none;
-  border-radius: calc(4px * 2) calc(4px / 2) calc(4px / 2) calc(4px * 2);
   color: #1a1a1a;
   font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, Helvetica,
     Arial, sans-serif;
@@ -72,6 +86,15 @@ const SearchInput = styled.input`
   &::placeholder {
     color: #949494;
   }
+
+  ${css(
+    mq({
+      borderRadius: [
+        "calc(4px * 2) calc(4px * 2) calc(4px / 2) calc(4px / 2)",
+        "calc(4px * 2) calc(4px / 2) calc(4px / 2) calc(4px * 2)"
+      ]
+    })
+  )}
 `;
 
 const SearchInputContainer = styled.div`
@@ -79,7 +102,12 @@ const SearchInputContainer = styled.div`
   position: relative;
   flex-direction: column;
   flex-grow: 1;
-  margin-right: 4px;
+
+  ${css(
+    mq({
+      margin: ["0 0 4px 0", "0 4px 0 0"]
+    })
+  )}
 `;
 
 const SearchButton = styled(Button)`
@@ -100,6 +128,15 @@ const SearchButton = styled(Button)`
     outline-style: none;
     box-shadow: 0 0 0 3px rgb(18 115 196 / 24%);
   }
+
+  ${css(
+    mq({
+      borderRadius: [
+        "calc(4px / 2) calc(4px / 2) calc(4px * 2) calc(4px * 2)",
+        "calc(4px / 2) calc(4px * 2) calc(4px * 2) calc(4px / 2)"
+      ]
+    })
+  )}
 `;
 
 const LoadingSpinner = styled.span`

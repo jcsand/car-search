@@ -2,7 +2,7 @@ import React from "react";
 import { render, fireEvent, waitFor, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import { mockRequests } from "../__helpers__";
-import { App } from "../../components/App";
+import { App } from "@@components/App";
 
 describe("App Spec", () => {
   mockRequests();

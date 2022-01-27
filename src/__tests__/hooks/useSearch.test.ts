@@ -1,6 +1,6 @@
 import { renderHook } from "@testing-library/react-hooks";
 import { mockRequests } from "../__helpers__";
-import { useSearch, buildSearchUrl, BASE_URL } from "@hooks/useSearch";
+import { useSearch, buildSearchUrl, BASE_URL } from "@@hooks/useSearch";
 
 describe("buildSearchUrl", () => {
   it("correctly builds a search URL", () => {

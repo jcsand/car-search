@@ -2,9 +2,12 @@
 import React from "react";
 import { color, ColorProps } from "styled-system";
 import styled from "@emotion/styled";
+import { css } from "@emotion/react";
+import facepaint from "facepaint";
 import { Box, Flex } from "reflexbox";
 
-import { Button } from "@components/Button";
+import { Button } from "@@components/Button";
+import menuIcon from "@@icons/menu.svg";
 
 // TODO: think about importing these properly
 const RENTAL_CARS_LOGO =
@@ -12,6 +15,14 @@ const RENTAL_CARS_LOGO =
 
 const GBP_FLAG =
   "https://cf.bstatic.com/static/img/flags/new/48-squared/gb.png";
+
+const mq = facepaint([
+  // "@media(min-width: 480px)",
+  "@media(min-width: 576px)"
+  // "@media(min-width: 768px)",
+  // "@media(min-width: 1024px)"
+  // "@media(only screen and (min-width: 1024px))"
+]);
 
 const StyledHeader = styled.header<ColorProps>`
   ${color}
@@ -23,9 +34,14 @@ const HeaderFlexContainer = styled.div`
   max-width: 1142px;
   height: 64px;
   margin: 0 auto;
-  padding-right: calc(4px * 4);
   padding-bottom: calc(4px * 2);
   padding-left: calc(4px * 2);
+
+  ${css(
+    mq({
+      paddingRight: ["0", "calc(4px * 4)"]
+    })
+  )}
 `;
 
 const HeaderLogo = styled.img`
@@ -39,6 +55,12 @@ const HeaderLogo = styled.img`
 const LanguageButton = styled(Button)`
   margin-left: calc(4px * 2);
   background: none;
+
+  ${css(
+    mq({
+      display: ["none", "block"]
+    })
+  )}
 `;
 
 const LanguageFlagImage = styled.img`
@@ -64,6 +86,29 @@ const HeaderManageBookingButton = styled(Button)`
     background-image: linear-gradient(#1273c40f, #1273c40f),
       linear-gradient(#fff, #fff);
   }
+
+  ${css(
+    mq({
+      display: ["none", "block"]
+    })
+  )}
+`;
+
+const MenuButton = styled(Button)`
+  margin-left: calc(4px * 2);
+  background: none;
+
+  ${css(
+    mq({
+      display: ["block", "none"]
+    })
+  )}
+`;
+
+const MenuImage = styled.img`
+  display: block;
+  width: calc(4px * 5);
+  height: calc(4px * 5);
 `;
 
 export const Header: React.FC = () => (
@@ -80,6 +125,9 @@ export const Header: React.FC = () => (
           <LanguageButton>
             <LanguageFlagImage alt="English Language Icon" src={GBP_FLAG} />
           </LanguageButton>
+          <MenuButton>
+            <MenuImage alt="Menu Icon" src={menuIcon} />
+          </MenuButton>
         </Flex>
       </Box>
       <Box ml="calc(4px * 2)" pl="calc(4px * 2)">

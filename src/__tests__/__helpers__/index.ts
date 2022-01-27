@@ -3,7 +3,7 @@ import { join } from "path";
 import { rest } from "msw";
 import { setupServer } from "msw/node";
 
-import { SearchResults, BASE_URL } from "@hooks/useSearch";
+import { SearchResults, BASE_URL } from "@@hooks/useSearch";
 
 export const loadFixtures = <T>(
   prefix: string,

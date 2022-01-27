@@ -1,9 +1,9 @@
 /** @jsxImportSource @emotion/react */
-import type { SearchState } from "../hooks/useSearch";
-
 import React from "react";
 import styled from "@emotion/styled";
 import { css, keyframes } from "@emotion/react";
+
+import type { SearchState } from "@@hooks/useSearch";
 
 const PLACE_TYPE_MAP: Record<string, string> = {
   A: "Airport",
