@@ -49,7 +49,6 @@ describe("App component spec", () => {
     expect(() => screen.getByRole("listbox")).toThrow();
   });
 
-  // TODO: consider verify-it?
   it("shows results for a two or more search characters", async () => {
     const expectedPlaceholder = "Pick-up Location";
     render(<App />);

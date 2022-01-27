@@ -26,7 +26,6 @@ export default {
       rules.typescriptRule,
       rules.htmlRule,
       rules.cssRule,
-      rules.svgRule,
       rules.imageRule
     ]
   },

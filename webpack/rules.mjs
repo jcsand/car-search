@@ -30,13 +30,7 @@ export const cssRule = {
   ]
 };
 
-// TODO: does this still need to be separate?
-export const svgRule = {
-  test: /\.svg$/i,
-  type: "asset"
-};
-
 export const imageRule = {
-  test: /\.(png|jpe?g|gif|webp)$/i,
+  test: /\.(svg|png|jpe?g|gif|webp)$/i,
   type: "asset"
 };
