@@ -115,7 +115,7 @@ export const Hero: React.FC = () => (
   <StyledHero color="foreground" bg="background">
     <HeroGradientOverlay>
       <HeroFlexContainer>
-        <HeroHeader>Car Hire – Search, Compare &amp; Save</HeroHeader>
+        <HeroHeader>Car Hire &ndash; Search, Compare &amp; Save</HeroHeader>
         <HeroList>
           <HeroListItem>Free cancellations on most bookings</HeroListItem>
           <HeroListItem>60,000+ locations</HeroListItem>

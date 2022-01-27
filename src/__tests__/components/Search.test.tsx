@@ -6,6 +6,8 @@ import { mockRequests } from "../__helpers__";
 import { Search } from "@@components/Search";
 
 describe("Search component", () => {
+  const expectedPlaceholder = "Pick-up Location";
+
   mockRequests();
 
   it("renders matching snapshot", async () => {
@@ -13,9 +15,19 @@ describe("Search component", () => {
     expect(rendered.baseElement).toMatchSnapshot();
   });
 
+  it("renders with results matching snapshot", async () => {
+    const rendered = render(<Search />);
+
+    await waitFor(() => screen.getByLabelText(expectedPlaceholder));
+    const searchInput = screen.getByLabelText(expectedPlaceholder);
+
+    await fireEvent.change(searchInput, { target: { value: "manchester" } });
+    await waitFor(() => screen.getByRole("listbox"));
+
+    expect(rendered.baseElement).toMatchSnapshot();
+  });
 
   it("replaces search query on suggestion click", async () => {
-    const expectedPlaceholder = "Pick-up Location";
     render(<Search />);
 
     await waitFor(() => screen.getByLabelText(expectedPlaceholder));
@@ -35,7 +47,6 @@ describe("Search component", () => {
   });
 
   it("navigates the search suggestions when using arrow keys", async () => {
-    const expectedPlaceholder = "Pick-up Location";
     render(<Search />);
 
     const searchInput = await waitFor(() =>
@@ -71,7 +82,6 @@ describe("Search component", () => {
   });
 
   it("should select the currently selected suggestion on enter press", async () => {
-    const expectedPlaceholder = "Pick-up Location";
     render(<Search />);
 
     const searchInput = await waitFor(() =>

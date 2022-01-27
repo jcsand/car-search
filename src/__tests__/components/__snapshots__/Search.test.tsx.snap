@@ -25,3 +25,190 @@ exports[`Search component renders matching snapshot 1`] = `
   </div>
 </body>
 `;
+
+exports[`Search component renders with results matching snapshot 1`] = `
+<body>
+  <div>
+    <div
+      class="css-mv11ig"
+    >
+      <div
+        class="css-oz4kv0"
+      >
+        <input
+          aria-label="Pick-up Location"
+          class="css-ls0vk8"
+          placeholder="Pick-up Location"
+          value="manchester"
+        />
+        <ul
+          class="css-9cjanj"
+          role="listbox"
+        >
+          <li
+            aria-selected="false"
+            class="css-bz0wyw"
+            id="search-suggestion-item-0"
+            role="option"
+          >
+            <span
+              class="css-m90xh7-SuggestionBadge"
+            >
+              Airport
+            </span>
+            <div
+              class="css-p7457k"
+            >
+              <p
+                class="css-1u0h2m7"
+              >
+                Manchester Airport (MAN)
+              </p>
+              <p
+                class="css-1f64yao"
+              >
+                Manchester, Greater Manchester, United Kingdom
+              </p>
+            </div>
+          </li>
+          <li
+            aria-selected="false"
+            class="css-bz0wyw"
+            id="search-suggestion-item-1"
+            role="option"
+          >
+            <span
+              class="css-t2p0p1-SuggestionBadge"
+            >
+              City
+            </span>
+            <div
+              class="css-p7457k"
+            >
+              <p
+                class="css-1u0h2m7"
+              >
+                Manchester
+              </p>
+              <p
+                class="css-1f64yao"
+              >
+                Greater Manchester, United Kingdom
+              </p>
+            </div>
+          </li>
+          <li
+            aria-selected="false"
+            class="css-bz0wyw"
+            id="search-suggestion-item-2"
+            role="option"
+          >
+            <span
+              class="css-t2p0p1-SuggestionBadge"
+            >
+              Station
+            </span>
+            <div
+              class="css-p7457k"
+            >
+              <p
+                class="css-1u0h2m7"
+              >
+                Manchester - Piccadilly Train Station
+              </p>
+              <p
+                class="css-1f64yao"
+              >
+                Manchester, England, United Kingdom
+              </p>
+            </div>
+          </li>
+          <li
+            aria-selected="false"
+            class="css-bz0wyw"
+            id="search-suggestion-item-3"
+            role="option"
+          >
+            <span
+              class="css-t2p0p1-SuggestionBadge"
+            >
+              City
+            </span>
+            <div
+              class="css-p7457k"
+            >
+              <p
+                class="css-1u0h2m7"
+              >
+                Oldham
+              </p>
+              <p
+                class="css-1f64yao"
+              >
+                Greater Manchester, United Kingdom
+              </p>
+            </div>
+          </li>
+          <li
+            aria-selected="false"
+            class="css-bz0wyw"
+            id="search-suggestion-item-4"
+            role="option"
+          >
+            <span
+              class="css-t2p0p1-SuggestionBadge"
+            >
+              City
+            </span>
+            <div
+              class="css-p7457k"
+            >
+              <p
+                class="css-1u0h2m7"
+              >
+                Bolton
+              </p>
+              <p
+                class="css-1f64yao"
+              >
+                Greater Manchester, United Kingdom
+              </p>
+            </div>
+          </li>
+          <li
+            aria-selected="false"
+            class="css-bz0wyw"
+            id="search-suggestion-item-5"
+            role="option"
+          >
+            <span
+              class="css-t2p0p1-SuggestionBadge"
+            >
+              City
+            </span>
+            <div
+              class="css-p7457k"
+            >
+              <p
+                class="css-1u0h2m7"
+              >
+                Stockport
+              </p>
+              <p
+                class="css-1f64yao"
+              >
+                Greater Manchester, United Kingdom
+              </p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <button
+        class="css-o225nb"
+      >
+        Search
+      </button>
+    </div>
+  </div>
+</body>
+`;

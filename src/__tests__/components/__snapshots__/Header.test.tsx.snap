@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header component renders matching snapshot 1`] = `
+<body>
+  <div>
+    <header
+      class="css-xgd2kp"
+      color="foreground"
+    >
+      <div
+        class="css-ik3yhu"
+      >
+        <div
+          class="css-wcquo4"
+        >
+          <a
+            class="css-2b6wk5"
+            href="/"
+          >
+            <img
+              alt="Rentalcars.com Brand Logo"
+              class="css-1syunqi"
+              src="test-file-stub"
+            />
+          </a>
+        </div>
+        <div
+          class="css-vurnku"
+        >
+          <div
+            class="css-4cffwv"
+          >
+            <button
+              class="css-1kju424"
+            >
+              GBP
+            </button>
+            <button
+              class="css-1kju424"
+            >
+              <img
+                alt="English Language Icon"
+                class="css-1aqz85s"
+                src="test-file-stub"
+              />
+            </button>
+            <button
+              class="css-13ak2ob"
+            >
+              <img
+                alt="Menu Icon"
+                class="css-rsrytf"
+                src="test-file-stub"
+              />
+            </button>
+          </div>
+        </div>
+        <div
+          class="css-1j2g464"
+        >
+          <button
+            class="css-1a6r96u"
+          >
+            Manage booking
+          </button>
+        </div>
+      </div>
+    </header>
+  </div>
+</body>
+`;

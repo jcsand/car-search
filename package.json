@@ -8,6 +8,8 @@
     "profile": "webpack --profile --json --config webpack.config.mjs > ./dist/profile.json && webpack-bundle-analyzer ./dist/profile.json",
     "start": "webpack serve --config webpack.config.mjs",
     "test": "jest",
+    "serve": "serve -n -s dist",
+    "serve:with-build": "run-s build serve",
     "lint": "run-s -c lint:prettier lint:eslint lint:stylelint",
     "lint:fix": "run-s -c lint:prettier:fix lint:eslint:fix lint:stylelint:fix",
     "lint:eslint": "eslint --ignore-path .gitignore .",
@@ -34,6 +36,7 @@
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
     "@testing-library/react-hooks": "^7.0.2",
+    "@types/jest-dev-server": "^5.0.0",
     "@typescript-eslint/eslint-plugin": "^5.10.0",
     "@typescript-eslint/parser": "^5.10.0",
     "babel-loader": "^8.2.3",
@@ -52,6 +55,7 @@
     "html-loader": "^3.1.0",
     "html-webpack-plugin": "^5.5.0",
     "jest": "^27.4.7",
+    "jest-dev-server": "^6.0.3",
     "mini-css-extract-plugin": "^2.5.3",
     "msw": "^0.36.7",
     "npm-run-all": "^4.1.5",
@@ -65,9 +69,11 @@
     "postcss-syntax": "^0.36.2",
     "prettier": "^2.5.1",
     "prettier-webpack-plugin": "^1.2.0",
+    "puppeteer": "^13.1.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "reflexbox": "^4.0.6",
+    "serve": "^13.0.2",
     "source-map": "^0.7.3",
     "styled-system": "^5.1.5",
     "stylelint": "^14.3.0",
@@ -91,21 +97,5 @@
     "@types/react-dom": "^17.0.11",
     "@types/reflexbox": "^4.0.4",
     "@types/styled-system": "^5.1.15"
-  },
-  "jest": {
-    "preset": "ts-jest",
-    "testEnvironment": "jest-environment-jsdom",
-    "testRegex": "(/__tests__/.*(\\.|/)(test|spec))\\.[jt]sx?$",
-    "moduleNameMapper": {
-      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)$": "<rootDir>/src/__tests__/__mocks__/fileMock.ts",
-      "\\.css$": "<rootDir>/src/__tests__/__mocks__/styleMock.ts",
-      "^@@src(.*)$": "<rootDir>/src/$1",
-      "^@@assets(.*)$": "<rootDir>/src/assets$1",
-      "^@@icons(.*)$": "<rootDir>/src/assets/icons$1",
-      "^@@images(.*)$": "<rootDir>/src/assets/images$1",
-      "^@@styles(.*)$": "<rootDir>/src/assets/styles$1",
-      "^@@components(.*)$": "<rootDir>/src/components$1",
-      "^@@hooks(.*)$": "<rootDir>/src/hooks$1"
-    }
   }
 }
