@@ -2,6 +2,7 @@
 import React from "react";
 import styled from "@emotion/styled";
 import { css, SerializedStyles } from "@emotion/react";
+import { t } from "@@lib/helpers";
 
 const PLACE_TYPE_MAP: Record<string, string> = {
   A: "Airport",
@@ -59,8 +60,8 @@ const SuggestionBadgeElement = styled.span`
   min-width: 5.1rem;
   padding: 0.3rem 0;
   border: none;
-  border-radius: 4px;
-  color: #fff;
+  border-radius: ${t.space(1)};
+  color: ${t.color("foreground")};
   font-size: 12px;
   font-weight: 500;
   line-height: 1rem;

@@ -7,6 +7,7 @@ import facepaint from "facepaint";
 import { LoadingSpinner } from "@@components/LoadingSpinner";
 import { Suggestions } from "@@components/Suggestions";
 import { SearchState } from "@@hooks/useSearch";
+import { t } from "@@src/lib/helpers";
 
 import searchIcon from "@@icons/search.svg";
 
@@ -24,24 +25,23 @@ const mq = facepaint([
 
 const SearchInputElement = styled.input`
   width: 100%;
-  height: 64px;
-  padding: calc(4px * 2);
-  padding-left: 44px;
+  height: ${t.space(12)};
+  padding: ${t.space(2)};
+  padding-left: ${t.space(10)};
   border: none;
-  color: #1a1a1a;
-  font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, Helvetica,
-    Arial, sans-serif;
+  color: ${t.color("lightBlack")};
+  font-family: ${({ theme }) => theme.fonts.os};
   font-size: 16px;
   font-weight: 500;
-  line-height: 24px;
+  line-height: ${t.space(6)};
 
   &:focus {
     outline-style: none;
-    box-shadow: 0 0 0 3px rgb(18 115 196 / 24%);
+    box-shadow: 0 0 0 3px ${t.color("lightBlue", 24 / 100)};
   }
 
   &::placeholder {
-    color: #949494;
+    color: ${t.color("grey")};
   }
 
   ${css(
@@ -65,12 +65,12 @@ const SearchInputContainer = styled.div`
     display: inline-block;
     position: absolute;
     z-index: 1;
-    top: calc(4px * 3);
-    left: calc(4px * 4);
-    width: calc(4px * 4);
-    height: calc(4px * 4);
-    margin-top: calc(4px * 3);
-    margin-right: calc(4px * 2);
+    top: ${t.space(3)};
+    left: ${t.space(4)};
+    width: ${t.space(4)};
+    height: ${t.space(4)};
+    margin-top: ${t.space(3)};
+    margin-right: ${t.space(2)};
     background: url("${searchIcon}");
     background-position: center;
     background-size: cover;

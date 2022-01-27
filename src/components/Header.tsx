@@ -7,6 +7,7 @@ import facepaint from "facepaint";
 import { Box, Flex } from "reflexbox";
 
 import { Button } from "@@components/Button";
+import { t } from "@@lib/helpers";
 
 import menuIcon from "@@icons/menu.svg";
 import rentalcarsLogo from "@@images/rc-logo-small--white.svg";
@@ -28,38 +29,38 @@ const HeaderFlexContainer = styled.div`
   display: flex;
   align-items: center;
   max-width: 1142px;
-  height: 64px;
+  height: ${t.space(12)};
   margin: 0 auto;
-  padding-bottom: calc(4px * 2);
-  padding-left: calc(4px * 2);
+  padding-bottom: ${t.space(2)};
+  padding-left: ${t.space(2)};
 
   ${css(
     mq({
-      paddingRight: ["0", "calc(4px * 4)"]
+      paddingRight: ["0", t.space(4)]
     })
   )}
 `;
 
 const HeaderLogo = styled.img`
   display: block;
-  margin-left: calc(4px * 2);
-  padding-top: calc(4px * 3);
-  padding-bottom: calc(4px * 3);
+  margin-left: ${t.space(2)};
+  padding-top: ${t.space(3)};
+  padding-bottom: ${t.space(3)};
   border-style: none;
 `;
 
 const HeaderLogoLink = styled.a`
   display: inline-block;
-  margin-top: calc(4px * 1.5);
+  margin-top: ${t.space(3, true)};
 
   &:focus {
     outline: none;
-    box-shadow: 0 0 0 3px rgb(255 255 255 / 24%);
+    box-shadow: 0 0 0 3px ${t.color("foreground", 24 / 100)};
   }
 `;
 
 const LanguageButton = styled(Button)`
-  margin-left: calc(4px * 2);
+  margin-left: ${t.space(2)};
   background: none;
 
   ${css(
@@ -71,26 +72,29 @@ const LanguageButton = styled(Button)`
 
 const LanguageFlagImage = styled.img`
   display: block;
-  width: calc(4px * 6);
-  height: calc(4px * 6);
+  width: ${t.space(6)};
+  height: ${t.space(6)};
   border-radius: 50%;
 `;
 
 const HeaderManageBookingButton = styled(Button)`
   min-height: 44px;
-  padding: calc(4px * 2) calc(4px * 4);
-  border-radius: 4px;
+  padding: ${t.space(2)} ${t.space(4)};
+  border-radius: ${t.space(1)};
   border-color: currentcolor;
-  background-color: #fff;
-  color: #1273c4;
-  line-height: calc(4px + 44px / 2);
+  background-color: ${t.color("foreground")};
+  color: ${t.color("lightBlue")};
+  line-height: calc(${t.space(1)} + ${t.space(10, true)});
   text-decoration: none;
 
   &:hover,
   &:focus {
-    background-color: #1273c40f;
-    background-image: linear-gradient(#1273c40f, #1273c40f),
-      linear-gradient(#fff, #fff);
+    background-color: ${t.color("lightBlue", 1 / 16)};
+    background-image: linear-gradient(
+        ${t.color("lightBlue", 1 / 16)},
+        ${t.color("lightBlue", 1 / 16)}
+      ),
+      linear-gradient(${t.color("foreground")}, ${t.color("foreground")});
   }
 
   ${css(
@@ -101,7 +105,7 @@ const HeaderManageBookingButton = styled(Button)`
 `;
 
 const MenuButton = styled(Button)`
-  margin-left: calc(4px * 2);
+  margin-left: ${t.space(2)};
   background: none;
 
   ${css(
@@ -113,8 +117,8 @@ const MenuButton = styled(Button)`
 
 const MenuImage = styled.img`
   display: block;
-  width: calc(4px * 5);
-  height: calc(4px * 5);
+  width: ${t.space(5)};
+  height: ${t.space(5)};
 `;
 
 export const Header: React.FC = () => (

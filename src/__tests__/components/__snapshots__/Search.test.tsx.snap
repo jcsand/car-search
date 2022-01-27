@@ -1,23 +1,167 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Search component renders matching snapshot 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  margin: 16px 0;
+  padding: 4px;
+  border-radius: 12px;
+  background: #ffb700;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16);
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+@media (min-width: 1024px) {
+  .emotion-0 {
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  margin: 0 0 4px 0;
+}
+
+.emotion-1::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  z-index: 1;
+  top: 12px;
+  left: 16px;
+  width: 16px;
+  height: 16px;
+  margin-top: 12px;
+  margin-right: 8px;
+  background: url("test-file-stub");
+  -webkit-background-position: center;
+  background-position: center;
+  -webkit-background-size: cover;
+  background-size: cover;
+  pointer-events: none;
+}
+
+@media (min-width: 1024px) {
+  .emotion-1 {
+    margin: 0 4px 0 0;
+  }
+}
+
+.emotion-2 {
+  width: 100%;
+  height: 64px;
+  padding: 8px;
+  padding-left: 44px;
+  border: none;
+  color: #1a1a1a;
+  font-family: BlinkMacSystemFont,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  border-radius: calc(4px * 2) calc(4px * 2) calc(4px / 2) calc(4px / 2);
+}
+
+.emotion-2:focus {
+  outline-style: none;
+  box-shadow: 0 0 0 3px rgba(18, 115, 196, 0.24);
+}
+
+.emotion-2::-webkit-input-placeholder {
+  color: #949494;
+}
+
+.emotion-2::-moz-placeholder {
+  color: #949494;
+}
+
+.emotion-2:-ms-input-placeholder {
+  color: #949494;
+}
+
+.emotion-2::placeholder {
+  color: #949494;
+}
+
+@media (min-width: 1024px) {
+  .emotion-2 {
+    border-radius: calc(4px * 2) calc(4px / 2) calc(4px / 2) calc(4px * 2);
+  }
+}
+
+.emotion-3 {
+  padding: 8px;
+  border: 1px solid transparent;
+  color: #fff;
+  font-family: "Avenir Next",BlinkMacSystemFont,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  line-height: 12px;
+  cursor: pointer;
+  height: 64px;
+  padding: 8px 16px;
+  background-color: #068323;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 28px;
+  border-radius: calc(4px / 2) calc(4px / 2) calc(4px * 2) calc(4px * 2);
+}
+
+.emotion-3:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.24);
+}
+
+.emotion-3:focus,
+.emotion-3:hover {
+  background-color: #0d6521;
+}
+
+.emotion-3:focus {
+  outline-style: none;
+  box-shadow: 0 0 0 3px rgba(18, 115, 196, 0.24);
+}
+
+@media (min-width: 1024px) {
+  .emotion-3 {
+    border-radius: calc(4px / 2) calc(4px * 2) calc(4px * 2) calc(4px / 2);
+  }
+}
+
 <body>
   <div>
     <div
-      class="css-mv11ig"
+      class="emotion-0"
     >
       <div
-        class="css-oz4kv0"
+        class="emotion-1"
       >
         <input
           aria-label="Pick-up Location"
-          class="css-ls0vk8"
+          class="emotion-2"
           placeholder="Pick-up Location"
           value=""
         />
       </div>
       <button
-        class="css-o225nb"
+        class="emotion-3"
       >
         Search
       </button>
@@ -27,45 +171,279 @@ exports[`Search component renders matching snapshot 1`] = `
 `;
 
 exports[`Search component renders with results matching snapshot 1`] = `
+@keyframes animation-0 {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  margin: 16px 0;
+  padding: 4px;
+  border-radius: 12px;
+  background: #ffb700;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16);
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+@media (min-width: 1024px) {
+  .emotion-0 {
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  margin: 0 0 4px 0;
+}
+
+.emotion-1::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  z-index: 1;
+  top: 12px;
+  left: 16px;
+  width: 16px;
+  height: 16px;
+  margin-top: 12px;
+  margin-right: 8px;
+  background: url("test-file-stub");
+  -webkit-background-position: center;
+  background-position: center;
+  -webkit-background-size: cover;
+  background-size: cover;
+  pointer-events: none;
+}
+
+@media (min-width: 1024px) {
+  .emotion-1 {
+    margin: 0 4px 0 0;
+  }
+}
+
+.emotion-2 {
+  width: 100%;
+  height: 64px;
+  padding: 8px;
+  padding-left: 44px;
+  border: none;
+  color: #1a1a1a;
+  font-family: BlinkMacSystemFont,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  border-radius: calc(4px * 2) calc(4px * 2) calc(4px / 2) calc(4px / 2);
+}
+
+.emotion-2:focus {
+  outline-style: none;
+  box-shadow: 0 0 0 3px rgba(18, 115, 196, 0.24);
+}
+
+.emotion-2::-webkit-input-placeholder {
+  color: #949494;
+}
+
+.emotion-2::-moz-placeholder {
+  color: #949494;
+}
+
+.emotion-2:-ms-input-placeholder {
+  color: #949494;
+}
+
+.emotion-2::placeholder {
+  color: #949494;
+}
+
+@media (min-width: 1024px) {
+  .emotion-2 {
+    border-radius: calc(4px * 2) calc(4px / 2) calc(4px / 2) calc(4px * 2);
+  }
+}
+
+.emotion-3 {
+  position: absolute;
+  top: calc(100% + 4px);
+  width: 100%;
+  border: none;
+  border-radius: 4px;
+  border-color: #1a1a1a;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.16);
+  color: #1a1a1a;
+  -webkit-animation: animation-0 0.5s;
+  animation: animation-0 0.5s;
+}
+
+.emotion-4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 12px;
+  cursor: pointer;
+}
+
+.emotion-4:hover,
+.emotion-4[aria-selected="true"] {
+  background: rgba(18, 115, 196, 0.06);
+}
+
+.emotion-5 {
+  display: inline-block;
+  min-width: 5.1rem;
+  padding: 0.3rem 0;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1rem;
+  text-align: center;
+  background: #ff8000;
+  color: #262626;
+}
+
+.emotion-6 {
+  padding-left: 12px;
+}
+
+.emotion-7 {
+  font-family: BlinkMacSystemFont,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.emotion-8 {
+  color: #474747;
+  font-family: BlinkMacSystemFont,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+}
+
+.emotion-10 {
+  display: inline-block;
+  min-width: 5.1rem;
+  padding: 0.3rem 0;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1rem;
+  text-align: center;
+  background: #0071c2;
+}
+
+.emotion-34 {
+  padding: 8px;
+  border: 1px solid transparent;
+  color: #fff;
+  font-family: "Avenir Next",BlinkMacSystemFont,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  line-height: 12px;
+  cursor: pointer;
+  height: 64px;
+  padding: 8px 16px;
+  background-color: #068323;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 28px;
+  border-radius: calc(4px / 2) calc(4px / 2) calc(4px * 2) calc(4px * 2);
+}
+
+.emotion-34:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.24);
+}
+
+.emotion-34:focus,
+.emotion-34:hover {
+  background-color: #0d6521;
+}
+
+.emotion-34:focus {
+  outline-style: none;
+  box-shadow: 0 0 0 3px rgba(18, 115, 196, 0.24);
+}
+
+@media (min-width: 1024px) {
+  .emotion-34 {
+    border-radius: calc(4px / 2) calc(4px * 2) calc(4px * 2) calc(4px / 2);
+  }
+}
+
 <body>
   <div>
     <div
-      class="css-mv11ig"
+      class="emotion-0"
     >
       <div
-        class="css-oz4kv0"
+        class="emotion-1"
       >
         <input
           aria-label="Pick-up Location"
-          class="css-ls0vk8"
+          class="emotion-2"
           placeholder="Pick-up Location"
           value="manchester"
         />
         <ul
-          class="css-9cjanj"
+          class="emotion-3"
           role="listbox"
         >
           <li
             aria-selected="false"
-            class="css-bz0wyw"
+            class="emotion-4"
             id="search-suggestion-item-0"
             role="option"
           >
             <span
-              class="css-m90xh7-SuggestionBadge"
+              class="emotion-5"
             >
               Airport
             </span>
             <div
-              class="css-p7457k"
+              class="emotion-6"
             >
               <p
-                class="css-1u0h2m7"
+                class="emotion-7"
               >
                 Manchester Airport (MAN)
               </p>
               <p
-                class="css-1f64yao"
+                class="emotion-8"
               >
                 Manchester, Greater Manchester, United Kingdom
               </p>
@@ -73,25 +451,25 @@ exports[`Search component renders with results matching snapshot 1`] = `
           </li>
           <li
             aria-selected="false"
-            class="css-bz0wyw"
+            class="emotion-4"
             id="search-suggestion-item-1"
             role="option"
           >
             <span
-              class="css-t2p0p1-SuggestionBadge"
+              class="emotion-10"
             >
               City
             </span>
             <div
-              class="css-p7457k"
+              class="emotion-6"
             >
               <p
-                class="css-1u0h2m7"
+                class="emotion-7"
               >
                 Manchester
               </p>
               <p
-                class="css-1f64yao"
+                class="emotion-8"
               >
                 Greater Manchester, United Kingdom
               </p>
@@ -99,25 +477,25 @@ exports[`Search component renders with results matching snapshot 1`] = `
           </li>
           <li
             aria-selected="false"
-            class="css-bz0wyw"
+            class="emotion-4"
             id="search-suggestion-item-2"
             role="option"
           >
             <span
-              class="css-t2p0p1-SuggestionBadge"
+              class="emotion-10"
             >
               Station
             </span>
             <div
-              class="css-p7457k"
+              class="emotion-6"
             >
               <p
-                class="css-1u0h2m7"
+                class="emotion-7"
               >
                 Manchester - Piccadilly Train Station
               </p>
               <p
-                class="css-1f64yao"
+                class="emotion-8"
               >
                 Manchester, England, United Kingdom
               </p>
@@ -125,25 +503,25 @@ exports[`Search component renders with results matching snapshot 1`] = `
           </li>
           <li
             aria-selected="false"
-            class="css-bz0wyw"
+            class="emotion-4"
             id="search-suggestion-item-3"
             role="option"
           >
             <span
-              class="css-t2p0p1-SuggestionBadge"
+              class="emotion-10"
             >
               City
             </span>
             <div
-              class="css-p7457k"
+              class="emotion-6"
             >
               <p
-                class="css-1u0h2m7"
+                class="emotion-7"
               >
                 Oldham
               </p>
               <p
-                class="css-1f64yao"
+                class="emotion-8"
               >
                 Greater Manchester, United Kingdom
               </p>
@@ -151,25 +529,25 @@ exports[`Search component renders with results matching snapshot 1`] = `
           </li>
           <li
             aria-selected="false"
-            class="css-bz0wyw"
+            class="emotion-4"
             id="search-suggestion-item-4"
             role="option"
           >
             <span
-              class="css-t2p0p1-SuggestionBadge"
+              class="emotion-10"
             >
               City
             </span>
             <div
-              class="css-p7457k"
+              class="emotion-6"
             >
               <p
-                class="css-1u0h2m7"
+                class="emotion-7"
               >
                 Bolton
               </p>
               <p
-                class="css-1f64yao"
+                class="emotion-8"
               >
                 Greater Manchester, United Kingdom
               </p>
@@ -177,25 +555,25 @@ exports[`Search component renders with results matching snapshot 1`] = `
           </li>
           <li
             aria-selected="false"
-            class="css-bz0wyw"
+            class="emotion-4"
             id="search-suggestion-item-5"
             role="option"
           >
             <span
-              class="css-t2p0p1-SuggestionBadge"
+              class="emotion-10"
             >
               City
             </span>
             <div
-              class="css-p7457k"
+              class="emotion-6"
             >
               <p
-                class="css-1u0h2m7"
+                class="emotion-7"
               >
                 Stockport
               </p>
               <p
-                class="css-1f64yao"
+                class="emotion-8"
               >
                 Greater Manchester, United Kingdom
               </p>
@@ -204,7 +582,7 @@ exports[`Search component renders with results matching snapshot 1`] = `
         </ul>
       </div>
       <button
-        class="css-o225nb"
+        class="emotion-34"
       >
         Search
       </button>

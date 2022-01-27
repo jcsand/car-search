@@ -5,6 +5,7 @@ import { css, keyframes } from "@emotion/react";
 
 import type { SearchState } from "@@hooks/useSearch";
 import { Suggestion } from "@@components/Suggestion";
+import { t } from "@@lib/helpers";
 
 const fadeIn = keyframes`
   from {
@@ -22,14 +23,14 @@ const fadeInAnimation = css`
 
 const SuggestionsContainer = styled.ul`
   position: absolute;
-  top: calc(100% + 4px);
+  top: calc(100% + ${t.space(1)});
   width: 100%;
   border: none;
-  border-radius: 4px;
-  border-color: #1a1a1a;
-  background: #fff;
-  box-shadow: 0 calc(4px / 2) calc(4px * 2) rgb(0 0 0 / 16%);
-  color: #1a1a1a;
+  border-radius: ${t.space(1)};
+  border-color: ${t.color("lightBlack")};
+  background: ${t.color("foreground")};
+  box-shadow: 0 ${t.space(1, true)} ${t.space(2)} ${t.color("black", 16 / 100)};
+  color: ${t.color("lightBlack")};
 
   ${fadeInAnimation}
 `;

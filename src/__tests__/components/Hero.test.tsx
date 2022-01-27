@@ -1,16 +1,17 @@
 import React from "react";
-import { render, waitFor, screen } from "@testing-library/react";
+import { waitFor, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import { Hero } from "@@components/Hero";
+import { renderWithTheme } from "../__helpers__";
 
 describe("Hero component", () => {
   it("renders matching snapshot", async () => {
-    const rendered = render(<Hero />);
+    const rendered = renderWithTheme(<Hero />);
     expect(rendered.baseElement).toMatchSnapshot();
   });
 
   it("has heading", async () => {
-    render(<Hero />);
+    renderWithTheme(<Hero />);
 
     const element = await waitFor(() => screen.getByRole("heading"));
 
@@ -18,7 +19,7 @@ describe("Hero component", () => {
   });
 
   it("has USP list", async () => {
-    render(<Hero />);
+    renderWithTheme(<Hero />);
 
     const element = await waitFor(() =>
       screen.getByText("Free cancellations on most bookings")

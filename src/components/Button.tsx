@@ -1,18 +1,19 @@
 /** @jsxImportSource @emotion/react */
 import styled from "@emotion/styled";
 
+import { t } from "@@lib/helpers";
+
 export const Button = styled.button`
-  padding: calc(4px * 2);
+  padding: ${t.space(2)};
   border: 1px solid transparent;
-  color: #fff;
-  font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, Helvetica,
-    Arial, sans-serif;
+  color: ${t.color("foreground")};
+  font-family: ${t.font("base")};
   font-size: 14px;
-  line-height: 12px;
+  line-height: ${t.space(3)};
   cursor: pointer;
 
   &:focus {
     outline: none;
-    box-shadow: 0 0 0 3px rgb(255 255 255 / 24%);
+    box-shadow: 0 0 0 3px ${t.color("foreground", 24 / 100)};
   }
 `;

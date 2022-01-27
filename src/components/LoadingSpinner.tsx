@@ -1,6 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import styled from "@emotion/styled";
 import { css, keyframes } from "@emotion/react";
+import { t } from "@@lib/helpers";
 
 const spin = keyframes`
   from {
@@ -19,20 +20,20 @@ const spinAnimation = css`
 export const LoadingSpinner = styled.span`
   display: block;
   position: absolute;
-  top: 21px;
-  right: 16px;
-  width: 24px;
-  height: 24px;
+  top: calc(${t.space(5)} + 1px);
+  right: ${t.space(4)};
+  width: ${t.space(6)};
+  height: ${t.space(6)};
   pointer-events: none;
 
   &::after {
     content: "";
     display: block;
-    width: calc(24px - 2px);
-    height: calc(24px - 2px);
-    border: 2px solid #e7e7e7;
+    width: calc(${t.space(6)} - 2px);
+    height: calc(${t.space(6)} - 2px);
+    border: 2px solid ${t.color("lightGrey")};
     border-radius: 50%;
-    border-right-color: #1273c4;
+    border-right-color: ${t.color("lightBlue")};
 
     ${spinAnimation};
   }

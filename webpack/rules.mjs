@@ -1,4 +1,5 @@
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import * as env from "./environment.mjs";
 
 export const typescriptRule = {
   test: /\.tsx?$/,
@@ -23,7 +24,7 @@ export const cssRule = {
       loader: "postcss-loader",
       options: {
         postcssOptions: {
-          plugins: ["postcss-preset-env"]
+          plugins: ["postcss-preset-env", ...(env.isProd ? ["cssnano"] : [])]
         }
       }
     }

@@ -20,7 +20,8 @@
       "@@images/*": ["src/assets/images/*"],
       "@@styles/*": ["src/assets/styles/*"],
       "@@components/*": ["src/components/*"],
-      "@@hooks/*": ["src/hooks/*"]
+      "@@hooks/*": ["src/hooks/*"],
+      "@@lib/*": ["src/lib/*"]
     },
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,

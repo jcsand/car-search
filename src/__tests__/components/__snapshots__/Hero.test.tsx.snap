@@ -1,57 +1,351 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Hero component renders matching snapshot 1`] = `
+.emotion-0 {
+  min-height: 290px;
+  -webkit-background-position: 50%;
+  background-position: 50%;
+  -webkit-background-size: cover;
+  background-size: cover;
+  color: #fff;
+  background-color: #1879ca;
+  height: auto;
+  background-image: none;
+}
+
+@media (min-width: 1024px) {
+  .emotion-0 {
+    height: min(calc(-268px + 100vh), 596px);
+    background-image: url(test-file-stub);
+  }
+}
+
+.emotion-1 {
+  height: inherit;
+  background: linear-gradient(
+      #1879ca,
+      rgba(24, 121, 202, 0)
+    );
+}
+
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  max-width: 1142px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.emotion-3 {
+  font-weight: 700;
+  padding: calc(4px * 2) 0;
+  font-size: 32px;
+  line-height: 40px;
+}
+
+@media (min-width: 1024px) {
+  .emotion-3 {
+    padding: calc(4px * 4) 0 6px;
+    font-size: 40px;
+    line-height: 52px;
+  }
+}
+
+.emotion-4 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-order: 1;
+  -ms-flex-order: 1;
+  order: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 44px auto 16px;
+  padding-right: 0;
+}
+
+.emotion-4::before {
+  content: "";
+  border-top: 1px solid #fff;
+  width: 60%;
+  margin-left: 15%;
+  position: absolute;
+  top: calc(-1 * 16px);
+}
+
+@media (min-width: 1024px) {
+  .emotion-4 {
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    margin: 0;
+    padding-right: calc(4px * 4);
+  }
+}
+
+.emotion-4::before {
+  display: block;
+}
+
+@media (min-width: 1024px) {
+  .emotion-4::before {
+    display: none;
+  }
+}
+
+.emotion-5 {
+  margin-right: 16px;
+  list-style: none;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.emotion-5::before {
+  content: "";
+  display: inline-block;
+  margin-right: 8px;
+  background: url("test-file-stub");
+  -webkit-background-position: center;
+  background-position: center;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+
+@media (min-width: 1024px) {
+  .emotion-5 {
+    font-size: 20px;
+    line-height: 28px;
+  }
+}
+
+.emotion-5::before {
+  width: calc(4px * 5);
+  height: calc(4px * 3);
+  margin-top: calc(4px * 2.5);
+}
+
+@media (min-width: 1024px) {
+  .emotion-5::before {
+    width: calc(4px * 6);
+    height: calc(4px * 5);
+    margin-top: calc(4px * 3);
+  }
+}
+
+.emotion-8 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  margin: 16px 0;
+  padding: 4px;
+  border-radius: 12px;
+  background: #ffb700;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16);
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+@media (min-width: 1024px) {
+  .emotion-8 {
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+}
+
+.emotion-9 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  margin: 0 0 4px 0;
+}
+
+.emotion-9::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  z-index: 1;
+  top: 12px;
+  left: 16px;
+  width: 16px;
+  height: 16px;
+  margin-top: 12px;
+  margin-right: 8px;
+  background: url("test-file-stub");
+  -webkit-background-position: center;
+  background-position: center;
+  -webkit-background-size: cover;
+  background-size: cover;
+  pointer-events: none;
+}
+
+@media (min-width: 1024px) {
+  .emotion-9 {
+    margin: 0 4px 0 0;
+  }
+}
+
+.emotion-10 {
+  width: 100%;
+  height: 64px;
+  padding: 8px;
+  padding-left: 44px;
+  border: none;
+  color: #1a1a1a;
+  font-family: BlinkMacSystemFont,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  border-radius: calc(4px * 2) calc(4px * 2) calc(4px / 2) calc(4px / 2);
+}
+
+.emotion-10:focus {
+  outline-style: none;
+  box-shadow: 0 0 0 3px rgba(18, 115, 196, 0.24);
+}
+
+.emotion-10::-webkit-input-placeholder {
+  color: #949494;
+}
+
+.emotion-10::-moz-placeholder {
+  color: #949494;
+}
+
+.emotion-10:-ms-input-placeholder {
+  color: #949494;
+}
+
+.emotion-10::placeholder {
+  color: #949494;
+}
+
+@media (min-width: 1024px) {
+  .emotion-10 {
+    border-radius: calc(4px * 2) calc(4px / 2) calc(4px / 2) calc(4px * 2);
+  }
+}
+
+.emotion-11 {
+  padding: 8px;
+  border: 1px solid transparent;
+  color: #fff;
+  font-family: "Avenir Next",BlinkMacSystemFont,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  line-height: 12px;
+  cursor: pointer;
+  height: 64px;
+  padding: 8px 16px;
+  background-color: #068323;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 28px;
+  border-radius: calc(4px / 2) calc(4px / 2) calc(4px * 2) calc(4px * 2);
+}
+
+.emotion-11:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.24);
+}
+
+.emotion-11:focus,
+.emotion-11:hover {
+  background-color: #0d6521;
+}
+
+.emotion-11:focus {
+  outline-style: none;
+  box-shadow: 0 0 0 3px rgba(18, 115, 196, 0.24);
+}
+
+@media (min-width: 1024px) {
+  .emotion-11 {
+    border-radius: calc(4px / 2) calc(4px * 2) calc(4px * 2) calc(4px / 2);
+  }
+}
+
 <body>
   <div>
     <div
-      class="css-al1uuz"
+      class="emotion-0"
       color="foreground"
     >
       <div
-        class="css-3mc4v6"
+        class="emotion-1"
       >
         <div
-          class="css-cevxc4"
+          class="emotion-2"
         >
           <h2
-            class="css-76v7hz"
+            class="emotion-3"
           >
             Car Hire – Search, Compare & Save
           </h2>
           <ul
-            class="css-1gzi17z"
+            class="emotion-4"
           >
             <li
-              class="css-tasv40"
+              class="emotion-5"
             >
               Free cancellations on most bookings
             </li>
             <li
-              class="css-tasv40"
+              class="emotion-5"
             >
               60,000+ locations
             </li>
             <li
-              class="css-tasv40"
+              class="emotion-5"
             >
               Customer support in 40+ languages
             </li>
           </ul>
           <div
-            class="css-mv11ig"
+            class="emotion-8"
           >
             <div
-              class="css-oz4kv0"
+              class="emotion-9"
             >
               <input
                 aria-label="Pick-up Location"
-                class="css-ls0vk8"
+                class="emotion-10"
                 placeholder="Pick-up Location"
                 value=""
               />
             </div>
             <button
-              class="css-o225nb"
+              class="emotion-11"
             >
               Search
             </button>

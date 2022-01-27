@@ -1,8 +1,8 @@
 import React from "react";
-import { render, fireEvent, waitFor, screen } from "@testing-library/react";
+import { fireEvent, waitFor, screen } from "@testing-library/react";
 import { getAllByRole } from "@testing-library/dom";
 import "@testing-library/jest-dom";
-import { mockRequests } from "../__helpers__";
+import { mockRequests, renderWithTheme } from "../__helpers__";
 import { Search } from "@@components/Search";
 
 describe("Search component", () => {
@@ -11,12 +11,12 @@ describe("Search component", () => {
   mockRequests();
 
   it("renders matching snapshot", async () => {
-    const rendered = render(<Search />);
+    const rendered = renderWithTheme(<Search />);
     expect(rendered.baseElement).toMatchSnapshot();
   });
 
   it("renders with results matching snapshot", async () => {
-    const rendered = render(<Search />);
+    const rendered = renderWithTheme(<Search />);
 
     await waitFor(() => screen.getByLabelText(expectedPlaceholder));
     const searchInput = screen.getByLabelText(expectedPlaceholder);
@@ -28,7 +28,7 @@ describe("Search component", () => {
   });
 
   it("replaces search query on suggestion click", async () => {
-    render(<Search />);
+    renderWithTheme(<Search />);
 
     await waitFor(() => screen.getByLabelText(expectedPlaceholder));
     const searchInput = screen.getByLabelText(expectedPlaceholder);
@@ -47,7 +47,7 @@ describe("Search component", () => {
   });
 
   it("navigates the search suggestions when using arrow keys", async () => {
-    render(<Search />);
+    renderWithTheme(<Search />);
 
     const searchInput = await waitFor(() =>
       screen.getByLabelText(expectedPlaceholder)
@@ -82,7 +82,7 @@ describe("Search component", () => {
   });
 
   it("should select the currently selected suggestion on enter press", async () => {
-    render(<Search />);
+    renderWithTheme(<Search />);
 
     const searchInput = await waitFor(() =>
       screen.getByLabelText(expectedPlaceholder)

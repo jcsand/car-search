@@ -6,6 +6,7 @@ import facepaint from "facepaint";
 
 import { Button } from "@@components/Button";
 import { SearchLocation } from "@@components/SearchLocation";
+import { t } from "@@lib/helpers";
 
 const mq = facepaint([
   // "@media(min-width: 480px)",
@@ -18,11 +19,11 @@ const mq = facepaint([
 const SearchContainer = styled.div`
   display: flex;
   position: relative;
-  margin: calc(4px * 4) 0;
-  padding: 4px;
-  border-radius: calc(4px * 3);
-  background: #ffb700;
-  box-shadow: 0 calc(4px / 2) calc(4px * 3) rgb(0 0 0 / 16%);
+  margin: ${t.space(4)} 0;
+  padding: ${t.space(1)};
+  border-radius: ${t.space(3)};
+  background: ${t.color("lightOrange")};
+  box-shadow: 0 ${t.space(1, true)} ${t.space(3)} ${t.color("black", 16 / 100)};
 
   ${css(
     mq({
@@ -33,21 +34,20 @@ const SearchContainer = styled.div`
 
 const SearchButton = styled(Button)`
   height: 64px;
-  padding: calc(4px * 2) calc(4px * 4);
-  border-radius: calc(4px / 2) calc(4px * 2) calc(4px * 2) calc(4px / 2);
-  background-color: #068323;
+  padding: ${t.space(2)} ${t.space(4)};
+  background-color: ${t.color("green")};
   font-size: 20px;
   font-weight: 700;
-  line-height: 28px;
+  line-height: ${t.space(7)};
 
   &:focus,
   &:hover {
-    background-color: #0d6521;
+    background-color: ${t.color("darkGreen")};
   }
 
   &:focus {
     outline-style: none;
-    box-shadow: 0 0 0 3px rgb(18 115 196 / 24%);
+    box-shadow: 0 0 0 3px ${t.color("lightBlue", 24 / 100)};
   }
 
   ${css(

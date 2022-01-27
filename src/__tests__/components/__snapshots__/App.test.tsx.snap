@@ -1,65 +1,534 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`App component spec renders matching snapshot 1`] = `
+.emotion-0 {
+  color: #fff;
+  background-color: #1879ca;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  max-width: 1142px;
+  height: 64px;
+  margin: 0 auto;
+  padding-bottom: 8px;
+  padding-left: 8px;
+  padding-right: 0;
+}
+
+.emotion-2 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.emotion-3 {
+  display: inline-block;
+  margin-top: 6px;
+}
+
+.emotion-3:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.24);
+}
+
+.emotion-4 {
+  display: block;
+  margin-left: 8px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  border-style: none;
+}
+
+.emotion-5 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+}
+
+.emotion-6 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.emotion-7 {
+  padding: 8px;
+  border: 1px solid transparent;
+  color: #fff;
+  font-family: "Avenir Next",BlinkMacSystemFont,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  line-height: 12px;
+  cursor: pointer;
+  margin-left: 8px;
+  background: none;
+  display: none;
+}
+
+.emotion-7:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.24);
+}
+
+@media (min-width: 576px) {
+  .emotion-7 {
+    display: block;
+  }
+}
+
+.emotion-9 {
+  display: block;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+}
+
+.emotion-10 {
+  padding: 8px;
+  border: 1px solid transparent;
+  color: #fff;
+  font-family: "Avenir Next",BlinkMacSystemFont,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  line-height: 12px;
+  cursor: pointer;
+  margin-left: 8px;
+  background: none;
+  display: block;
+}
+
+.emotion-10:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.24);
+}
+
+@media (min-width: 576px) {
+  .emotion-10 {
+    display: none;
+  }
+}
+
+.emotion-11 {
+  display: block;
+  width: 20px;
+  height: 20px;
+}
+
+.emotion-12 {
+  box-sizing: border-box;
+  margin: 0;
+  min-width: 0;
+  margin-left: calc(4px * 2);
+  padding-left: calc(4px * 2);
+}
+
+.emotion-13 {
+  padding: 8px;
+  border: 1px solid transparent;
+  color: #fff;
+  font-family: "Avenir Next",BlinkMacSystemFont,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  line-height: 12px;
+  cursor: pointer;
+  min-height: 44px;
+  padding: 8px 16px;
+  border-radius: 4px;
+  border-color: currentcolor;
+  background-color: #fff;
+  color: #1273c4;
+  line-height: calc(4px + 22px);
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  display: none;
+}
+
+.emotion-13:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.24);
+}
+
+.emotion-13:hover,
+.emotion-13:focus {
+  background-color: rgba(18, 115, 196, 0.0625);
+  background-image: linear-gradient(
+          rgba(18, 115, 196, 0.0625),
+          rgba(18, 115, 196, 0.0625)
+        ),linear-gradient(#fff, #fff);
+}
+
+@media (min-width: 576px) {
+  .emotion-13 {
+    display: block;
+  }
+}
+
+.emotion-14 {
+  min-height: 290px;
+  -webkit-background-position: 50%;
+  background-position: 50%;
+  -webkit-background-size: cover;
+  background-size: cover;
+  color: #fff;
+  background-color: #1879ca;
+  height: auto;
+  background-image: none;
+}
+
+@media (min-width: 1024px) {
+  .emotion-14 {
+    height: min(calc(-268px + 100vh), 596px);
+    background-image: url(test-file-stub);
+  }
+}
+
+.emotion-15 {
+  height: inherit;
+  background: linear-gradient(
+      #1879ca,
+      rgba(24, 121, 202, 0)
+    );
+}
+
+.emotion-16 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  max-width: 1142px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.emotion-17 {
+  font-weight: 700;
+  padding: calc(4px * 2) 0;
+  font-size: 32px;
+  line-height: 40px;
+}
+
+@media (min-width: 1024px) {
+  .emotion-17 {
+    padding: calc(4px * 4) 0 6px;
+    font-size: 40px;
+    line-height: 52px;
+  }
+}
+
+.emotion-18 {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  -webkit-order: 1;
+  -ms-flex-order: 1;
+  order: 1;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin: 44px auto 16px;
+  padding-right: 0;
+}
+
+.emotion-18::before {
+  content: "";
+  border-top: 1px solid #fff;
+  width: 60%;
+  margin-left: 15%;
+  position: absolute;
+  top: calc(-1 * 16px);
+}
+
+@media (min-width: 1024px) {
+  .emotion-18 {
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    margin: 0;
+    padding-right: calc(4px * 4);
+  }
+}
+
+.emotion-18::before {
+  display: block;
+}
+
+@media (min-width: 1024px) {
+  .emotion-18::before {
+    display: none;
+  }
+}
+
+.emotion-19 {
+  margin-right: 16px;
+  list-style: none;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.emotion-19::before {
+  content: "";
+  display: inline-block;
+  margin-right: 8px;
+  background: url("test-file-stub");
+  -webkit-background-position: center;
+  background-position: center;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+
+@media (min-width: 1024px) {
+  .emotion-19 {
+    font-size: 20px;
+    line-height: 28px;
+  }
+}
+
+.emotion-19::before {
+  width: calc(4px * 5);
+  height: calc(4px * 3);
+  margin-top: calc(4px * 2.5);
+}
+
+@media (min-width: 1024px) {
+  .emotion-19::before {
+    width: calc(4px * 6);
+    height: calc(4px * 5);
+    margin-top: calc(4px * 3);
+  }
+}
+
+.emotion-22 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  margin: 16px 0;
+  padding: 4px;
+  border-radius: 12px;
+  background: #ffb700;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.16);
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+@media (min-width: 1024px) {
+  .emotion-22 {
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+}
+
+.emotion-23 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  margin: 0 0 4px 0;
+}
+
+.emotion-23::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  z-index: 1;
+  top: 12px;
+  left: 16px;
+  width: 16px;
+  height: 16px;
+  margin-top: 12px;
+  margin-right: 8px;
+  background: url("test-file-stub");
+  -webkit-background-position: center;
+  background-position: center;
+  -webkit-background-size: cover;
+  background-size: cover;
+  pointer-events: none;
+}
+
+@media (min-width: 1024px) {
+  .emotion-23 {
+    margin: 0 4px 0 0;
+  }
+}
+
+.emotion-24 {
+  width: 100%;
+  height: 64px;
+  padding: 8px;
+  padding-left: 44px;
+  border: none;
+  color: #1a1a1a;
+  font-family: BlinkMacSystemFont,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  border-radius: calc(4px * 2) calc(4px * 2) calc(4px / 2) calc(4px / 2);
+}
+
+.emotion-24:focus {
+  outline-style: none;
+  box-shadow: 0 0 0 3px rgba(18, 115, 196, 0.24);
+}
+
+.emotion-24::-webkit-input-placeholder {
+  color: #949494;
+}
+
+.emotion-24::-moz-placeholder {
+  color: #949494;
+}
+
+.emotion-24:-ms-input-placeholder {
+  color: #949494;
+}
+
+.emotion-24::placeholder {
+  color: #949494;
+}
+
+@media (min-width: 1024px) {
+  .emotion-24 {
+    border-radius: calc(4px * 2) calc(4px / 2) calc(4px / 2) calc(4px * 2);
+  }
+}
+
+.emotion-25 {
+  padding: 8px;
+  border: 1px solid transparent;
+  color: #fff;
+  font-family: "Avenir Next",BlinkMacSystemFont,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  line-height: 12px;
+  cursor: pointer;
+  height: 64px;
+  padding: 8px 16px;
+  background-color: #068323;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 28px;
+  border-radius: calc(4px / 2) calc(4px / 2) calc(4px * 2) calc(4px * 2);
+}
+
+.emotion-25:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.24);
+}
+
+.emotion-25:focus,
+.emotion-25:hover {
+  background-color: #0d6521;
+}
+
+.emotion-25:focus {
+  outline-style: none;
+  box-shadow: 0 0 0 3px rgba(18, 115, 196, 0.24);
+}
+
+@media (min-width: 1024px) {
+  .emotion-25 {
+    border-radius: calc(4px / 2) calc(4px * 2) calc(4px * 2) calc(4px / 2);
+  }
+}
+
 <body>
   <div>
     <header
-      class="css-1mjxcjf"
+      class="emotion-0"
       color="foreground"
     >
       <div
-        class="css-ik3yhu"
+        class="emotion-1"
       >
         <div
-          class="css-wcquo4"
+          class="emotion-2"
         >
           <a
-            class="css-2b6wk5"
+            class="emotion-3"
             href="/"
           >
             <img
               alt="Rentalcars.com Brand Logo"
-              class="css-1syunqi"
+              class="emotion-4"
               src="test-file-stub"
             />
           </a>
         </div>
         <div
-          class="css-vurnku"
+          class="emotion-5"
         >
           <div
-            class="css-4cffwv"
+            class="emotion-6"
           >
             <button
-              class="css-1kju424"
+              class="emotion-7"
             >
               GBP
             </button>
             <button
-              class="css-1kju424"
+              class="emotion-7"
             >
               <img
                 alt="English Language Icon"
-                class="css-1aqz85s"
+                class="emotion-9"
                 src="test-file-stub"
               />
             </button>
             <button
-              class="css-13ak2ob"
+              class="emotion-10"
             >
               <img
                 alt="Menu Icon"
-                class="css-rsrytf"
+                class="emotion-11"
                 src="test-file-stub"
               />
             </button>
           </div>
         </div>
         <div
-          class="css-1j2g464"
+          class="emotion-12"
         >
           <button
-            class="css-1a6r96u"
+            class="emotion-13"
           >
             Manage booking
           </button>
@@ -67,54 +536,54 @@ exports[`App component spec renders matching snapshot 1`] = `
       </div>
     </header>
     <div
-      class="css-1d1n8lg"
+      class="emotion-14"
       color="foreground"
     >
       <div
-        class="css-3mc4v6"
+        class="emotion-15"
       >
         <div
-          class="css-cevxc4"
+          class="emotion-16"
         >
           <h2
-            class="css-76v7hz"
+            class="emotion-17"
           >
             Car Hire – Search, Compare & Save
           </h2>
           <ul
-            class="css-1gzi17z"
+            class="emotion-18"
           >
             <li
-              class="css-tasv40"
+              class="emotion-19"
             >
               Free cancellations on most bookings
             </li>
             <li
-              class="css-tasv40"
+              class="emotion-19"
             >
               60,000+ locations
             </li>
             <li
-              class="css-tasv40"
+              class="emotion-19"
             >
               Customer support in 40+ languages
             </li>
           </ul>
           <div
-            class="css-mv11ig"
+            class="emotion-22"
           >
             <div
-              class="css-oz4kv0"
+              class="emotion-23"
             >
               <input
                 aria-label="Pick-up Location"
-                class="css-ls0vk8"
+                class="emotion-24"
                 placeholder="Pick-up Location"
                 value=""
               />
             </div>
             <button
-              class="css-o225nb"
+              class="emotion-25"
             >
               Search
             </button>

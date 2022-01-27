@@ -6,6 +6,7 @@ import { css } from "@emotion/react";
 import facepaint from "facepaint";
 
 import { Search } from "@@components/Search";
+import { t } from "@@lib/helpers";
 
 import checkmarkIcon from "@@icons/checkmark.svg";
 import heroBackground from "@@images/background-large.jpg";
@@ -34,7 +35,10 @@ const StyledHero = styled.div<ColorProps>`
 
 const HeroGradientOverlay = styled.div`
   height: inherit;
-  background: linear-gradient(#1879ca, rgb(24 121 202 / 0%));
+  background: linear-gradient(
+    ${t.color("background")},
+    ${t.color("background", 0)}
+  );
 `;
 
 const HeroFlexContainer = styled.div`
@@ -42,7 +46,7 @@ const HeroFlexContainer = styled.div`
   flex-direction: column;
   max-width: 1142px;
   margin: 0 auto;
-  padding: 0 calc(4px * 4);
+  padding: 0 ${t.space(4)};
 `;
 
 const HeroHeader = styled.h2`
@@ -65,11 +69,11 @@ const HeroList = styled.ul`
 
   &::before {
     content: "";
-    border-top: 1px solid #fff;
+    border-top: 1px solid ${t.color("foreground")};
     width: 60%;
     margin-left: 15%;
     position: absolute;
-    top: -16px;
+    top: calc(-1 * ${t.space(4)});
   }
 
   ${css(
@@ -86,13 +90,13 @@ const HeroList = styled.ul`
 `;
 
 const HeroListItem = styled.li`
-  margin-right: calc(4px * 4);
+  margin-right: ${t.space(4)};
   list-style: none;
 
   &::before {
     content: "";
     display: inline-block;
-    margin-right: calc(4px * 2);
+    margin-right: ${t.space(2)};
     background: url("${checkmarkIcon}");
     background-position: center;
     background-size: cover;

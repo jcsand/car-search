@@ -2,6 +2,7 @@ module.exports = {
   preset: "ts-jest",
   testEnvironment: "jest-environment-jsdom",
   testRegex: "(/__tests__/.*(\\.|/)(test|spec))\\.[jt]sx?$",
+  snapshotSerializers: ["@emotion/jest/serializer"],
   moduleNameMapper: {
     "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)$":
       "<rootDir>/src/__tests__/__mocks__/fileMock.ts",
@@ -12,6 +13,7 @@ module.exports = {
     "^@@images(.*)$": "<rootDir>/src/assets/images$1",
     "^@@styles(.*)$": "<rootDir>/src/assets/styles$1",
     "^@@components(.*)$": "<rootDir>/src/components$1",
-    "^@@hooks(.*)$": "<rootDir>/src/hooks$1"
+    "^@@hooks(.*)$": "<rootDir>/src/hooks$1",
+    "^@@lib(.*)$": "<rootDir>/src/lib$1"
   }
 };
