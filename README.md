@@ -23,3 +23,7 @@ This project is configured with `webpack-dev-server`, which you can start via th
 ## Deployment
 
 Running `yarn build` will create a statically-publishable bundle in the `./dist` folder. You can host this on an static HTTP server, or via a service such as S3.
+
+There is also a github action configured in this repo to automatically statically publish this to github pages upon any update.
+
+<!-- TODO: add url -->
