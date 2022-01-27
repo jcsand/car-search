@@ -1,6 +1,7 @@
 name: Static publish to gh-pages
 
 on: 
+  workflow_dispatch:
   repository_dispatch:
   push:
     branches:
