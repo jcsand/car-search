@@ -26,4 +26,6 @@ Running `yarn build` will create a statically-publishable bundle in the `./dist`
 
 There is also a github action configured in this repo to automatically statically publish this to github pages upon any update.
 
-<!-- TODO: add url -->
+* [Live GitHub Pages Example]
+
+[live github pages example]: https://jcsand.github.io/car-search/
