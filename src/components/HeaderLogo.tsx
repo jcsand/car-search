@@ -2,7 +2,7 @@
 import React from "react";
 import styled from "@emotion/styled";
 
-import { t } from "@@lib/helpers";
+import { t } from "@@lib/themeHelpers";
 
 import rentalcarsLogo from "@@images/rc-logo-small--white.svg";
 

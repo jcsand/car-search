@@ -2,7 +2,7 @@
 import React from "react";
 import styled from "@emotion/styled";
 import { css, SerializedStyles } from "@emotion/react";
-import { t } from "@@lib/helpers";
+import { t } from "@@lib/themeHelpers";
 
 const PLACE_TYPE_MAP: Record<string, string> = {
   A: "Airport",

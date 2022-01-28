@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import styled from "@emotion/styled";
 import { css, keyframes } from "@emotion/react";
-import { t } from "@@lib/helpers";
+import { t } from "@@lib/themeHelpers";
 
 const spin = keyframes`
   from {

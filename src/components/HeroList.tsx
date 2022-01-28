@@ -1,19 +1,12 @@
 /** @jsxImportSource @emotion/react */
 import React from "react";
 import styled from "@emotion/styled";
-import facepaint from "facepaint";
 
-import { mediaQuery, t } from "@@lib/helpers";
+import { mediaQuery, t } from "@@lib/themeHelpers";
 
 import checkmarkIcon from "@@icons/checkmark.svg";
 
-const mq = facepaint([
-  // "@media(min-width: 480px)",
-  // "@media(min-width: 576px)",
-  // "@media(min-width: 768px)",
-  "@media(min-width: 1024px)"
-  // "@media(only screen and (min-width: 1024px))"
-]);
+const mq = mediaQuery(["l"]);
 
 const HeroListElement = styled.ul`
   position: relative;
@@ -30,7 +23,7 @@ const HeroListElement = styled.ul`
     top: calc(-1 * ${t.space(4)});
   }
 
-  ${mediaQuery(mq, (t) => ({
+  ${mq((t) => ({
     order: [1, 0],
     flexDirection: ["column", "row"],
     margin: [`${t.space(10)} auto ${t.space(4)}`, "0"],
@@ -54,7 +47,7 @@ const HeroListItem = styled.li`
     background-size: cover;
   }
 
-  ${mediaQuery(mq, (t) => ({
+  ${mq((t) => ({
     fontSize: ["14px", "20px"],
     lineHeight: [t.space(5), t.space(7)],
     "&::before": {

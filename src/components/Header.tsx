@@ -1,21 +1,14 @@
 /** @jsxImportSource @emotion/react */
 import React from "react";
 import styled from "@emotion/styled";
-import facepaint from "facepaint";
 
 import { HeaderLogo } from "@@components/HeaderLogo";
 import { HeaderManageBooking } from "@@components/HeaderManageBooking";
 import { HeaderLanguage } from "@@components/HeaderLanguage";
 import { HeaderMenu } from "@@components/HeaderMenu";
-import { mediaQuery, t } from "@@lib/helpers";
+import { t, mediaQuery } from "@@lib/themeHelpers";
 
-const mq = facepaint([
-  // "@media(min-width: 480px)",
-  "@media(min-width: 576px)"
-  // "@media(min-width: 768px)",
-  // "@media(min-width: 1024px)"
-  // "@media(only screen and (min-width: 1024px))"
-]);
+const mq = mediaQuery(["s"]);
 
 const HeaderBackground = styled.header`
   color: ${t.color("foreground")};
@@ -31,7 +24,7 @@ const HeaderContainer = styled.div`
   padding-bottom: ${t.space(2)};
   padding-left: ${t.space(2)};
 
-  ${mediaQuery(mq, {
+  ${mq({
     paddingRight: ["0", t.space(4)]
   })}
 `;

@@ -1,26 +1,18 @@
 /** @jsxImportSource @emotion/react */
 import React, { useState } from "react";
 import styled from "@emotion/styled";
-import facepaint from "facepaint";
 
 import { LoadingSpinner } from "@@components/LoadingSpinner";
 import { Suggestions } from "@@components/Suggestions";
 import { SearchState } from "@@hooks/useSearch";
-import { mediaQuery, t } from "@@lib/helpers";
+import { mediaQuery, t } from "@@lib/themeHelpers";
 
 import searchIcon from "@@icons/search.svg";
 
-// TODO: constant/config
 const MIN_SEARCH = 2;
 const MAX_SUGGESTIONS = 6;
 
-const mq = facepaint([
-  // "@media(min-width: 480px)",
-  // "@media(min-width: 576px)",
-  // "@media(min-width: 768px)",
-  "@media(min-width: 1024px)"
-  // "@media(only screen and (min-width: 1024px))"
-]);
+const mq = mediaQuery(["l"]);
 
 const SearchInputElement = styled.input`
   width: 100%;
@@ -29,7 +21,7 @@ const SearchInputElement = styled.input`
   padding-left: ${t.space(10)};
   border: none;
   color: ${t.color("lightBlack")};
-  font-family: ${({ theme }) => theme.fonts.os};
+  font-family: ${t.font("os")};
   font-size: 16px;
   font-weight: 500;
   line-height: ${t.space(6)};
@@ -43,7 +35,7 @@ const SearchInputElement = styled.input`
     color: ${t.color("grey")};
   }
 
-  ${mediaQuery(mq, (t) => ({
+  ${mq((t) => ({
     borderRadius: [
       `${t.space(2)} ${t.space(2)} ${t.space(1, true)} ${t.space(1, true)}`,
       `${t.space(2)} ${t.space(1, true)} ${t.space(1, true)} ${t.space(2)}`
@@ -74,7 +66,7 @@ const SearchInputContainer = styled.div`
     pointer-events: none;
   }
 
-  ${mediaQuery(mq, (t) => ({
+  ${mq((t) => ({
     margin: [`0 0 ${t.space(1)} 0`, `0 ${t.space(1)} 0 0`]
   }))}
 `;

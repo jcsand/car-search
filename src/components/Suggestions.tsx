@@ -5,7 +5,7 @@ import { css, keyframes } from "@emotion/react";
 
 import type { SearchState } from "@@hooks/useSearch";
 import { Suggestion } from "@@components/Suggestion";
-import { t } from "@@lib/helpers";
+import { t } from "@@lib/themeHelpers";
 
 const fadeIn = keyframes`
   from {

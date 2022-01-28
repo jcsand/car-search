@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import styled from "@emotion/styled";
 
-import { t } from "@@lib/helpers";
+import { t } from "@@lib/themeHelpers";
 
 export const Button = styled.button`
   padding: ${t.space(2)};

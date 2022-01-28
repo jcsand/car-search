@@ -1,25 +1,18 @@
 /** @jsxImportSource @emotion/react */
 import React from "react";
 import styled from "@emotion/styled";
-import facepaint from "facepaint";
 
 import { Button } from "@@components/Button";
-import { mediaQuery, t } from "@@lib/helpers";
+import { mediaQuery, t } from "@@lib/themeHelpers";
 
 import menuIcon from "@@icons/menu.svg";
 
-const mq = facepaint([
-  // "@media(min-width: 480px)",
-  "@media(min-width: 576px)"
-  // "@media(min-width: 768px)",
-  // "@media(min-width: 1024px)"
-  // "@media(only screen and (min-width: 1024px))"
-]);
+const mq = mediaQuery(["s"]);
 
 const MenuContainer = styled.div`
   margin-right: ${t.space(4)};
 
-  ${mediaQuery(mq, {
+  ${mq({
     display: ["flex", "none"]
   })};
 `;

@@ -32,7 +32,14 @@ const OS_FONT_STACK = [
   "sans-serif"
 ].join(", ");
 
-export const breakpoints = [480, 576, 768, 1024];
+export type Breakpoint = "xs" | "s" | "m" | "l" | "xl";
+export const breakpoints: Record<Breakpoint, number> = {
+  xs: 480,
+  s: 576,
+  m: 768,
+  l: 1024,
+  xl: 1142
+};
 
 export const theme: Theme = {
   space: [0, 4, 8, 12, 16, 20, 24, 28, 32, 40, 44, 52, 64],

@@ -1,19 +1,12 @@
 /** @jsxImportSource @emotion/react */
 import React from "react";
 import styled from "@emotion/styled";
-import facepaint from "facepaint";
 
 import { Button } from "@@components/Button";
 import { SearchLocation } from "@@components/SearchLocation";
-import { mediaQuery, t } from "@@lib/helpers";
+import { mediaQuery, t } from "@@lib/themeHelpers";
 
-const mq = facepaint([
-  // "@media(min-width: 480px)",
-  // "@media(min-width: 576px)",
-  // "@media(min-width: 768px)",
-  "@media(min-width: 1024px)"
-  // "@media(only screen and (min-width: 1024px))"
-]);
+const mq = mediaQuery(["l"]);
 
 const SearchContainer = styled.div`
   display: flex;
@@ -24,7 +17,7 @@ const SearchContainer = styled.div`
   background: ${t.color("lightOrange")};
   box-shadow: 0 ${t.space(1, true)} ${t.space(3)} ${t.color("black", 16 / 100)};
 
-  ${mediaQuery(mq, {
+  ${mq({
     flexDirection: ["column", "row"]
   })}
 `;
@@ -47,7 +40,7 @@ const SearchButton = styled(Button)`
     box-shadow: 0 0 0 3px ${t.color("lightBlue", 24 / 100)};
   }
 
-  ${mediaQuery(mq, (t) => ({
+  ${mq((t) => ({
     borderRadius: [
       `${t.space(2, true)} ${t.space(2, true)} ${t.space(2)} ${t.space(2)}`,
       `${t.space(2, true)} ${t.space(2)} ${t.space(2)} ${t.space(2, true)}`

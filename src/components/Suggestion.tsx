@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 
 import type { HydratedSearchResult } from "@@hooks/useSearch";
 import { SuggestionBadge } from "@@components/SuggestionBadge";
-import { t } from "@@lib/helpers";
+import { t } from "@@lib/themeHelpers";
 
 const SuggestionContainer = styled.li`
   display: flex;

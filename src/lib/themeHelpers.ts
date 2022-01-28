@@ -1,6 +1,7 @@
 import { css, Theme } from "@emotion/react";
 import { rgba } from "emotion-rgba";
-import { Arg, DynamicStyleFunction } from "facepaint";
+import facepaint, { Arg } from "facepaint";
+import { breakpoints, Breakpoint } from "./theme";
 
 export const themeSpace =
   (size: keyof Theme["space"] = 1, half = false) =>
@@ -34,12 +35,19 @@ export const wrapThemeHelpers = (props: { theme: Theme }) => ({
 
 type WrappedThemeHelpers = ReturnType<typeof wrapThemeHelpers>;
 
-export const mediaQuery =
-  (
-    mq: DynamicStyleFunction,
-    callbackOrArg: Arg | ((t: WrappedThemeHelpers) => Arg)
-  ) =>
-  (props: { theme: Theme }) =>
-    typeof callbackOrArg === "function"
-      ? css(mq(callbackOrArg(wrapThemeHelpers(props))))
-      : css(mq(callbackOrArg));
+export const facepaintFactory = (requestedBreakpoints: Breakpoint[]) =>
+  facepaint(
+    requestedBreakpoints.map(
+      (key) => `@media(min-width: ${breakpoints[key]}px)`
+    )
+  );
+
+export const mediaQuery = (requestedBreakpoints: Breakpoint[]) => {
+  const mq = facepaintFactory(requestedBreakpoints);
+
+  return (callbackOrArg: Arg | ((t: WrappedThemeHelpers) => Arg)) =>
+    (props: { theme: Theme }) =>
+      typeof callbackOrArg === "function"
+        ? css(mq(callbackOrArg(wrapThemeHelpers(props))))
+        : css(mq(callbackOrArg));
+};
