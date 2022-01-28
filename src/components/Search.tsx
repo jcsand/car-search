@@ -1,12 +1,11 @@
 /** @jsxImportSource @emotion/react */
 import React from "react";
 import styled from "@emotion/styled";
-import { css } from "@emotion/react";
 import facepaint from "facepaint";
 
 import { Button } from "@@components/Button";
 import { SearchLocation } from "@@components/SearchLocation";
-import { t } from "@@lib/helpers";
+import { mediaQuery, t } from "@@lib/helpers";
 
 const mq = facepaint([
   // "@media(min-width: 480px)",
@@ -25,11 +24,9 @@ const SearchContainer = styled.div`
   background: ${t.color("lightOrange")};
   box-shadow: 0 ${t.space(1, true)} ${t.space(3)} ${t.color("black", 16 / 100)};
 
-  ${css(
-    mq({
-      flexDirection: ["column", "row"]
-    })
-  )}
+  ${mediaQuery(mq, {
+    flexDirection: ["column", "row"]
+  })}
 `;
 
 const SearchButton = styled(Button)`
@@ -50,14 +47,12 @@ const SearchButton = styled(Button)`
     box-shadow: 0 0 0 3px ${t.color("lightBlue", 24 / 100)};
   }
 
-  ${css(
-    mq({
-      borderRadius: [
-        "calc(4px / 2) calc(4px / 2) calc(4px * 2) calc(4px * 2)",
-        "calc(4px / 2) calc(4px * 2) calc(4px * 2) calc(4px / 2)"
-      ]
-    })
-  )}
+  ${mediaQuery(mq, (t) => ({
+    borderRadius: [
+      `${t.space(2, true)} ${t.space(2, true)} ${t.space(2)} ${t.space(2)}`,
+      `${t.space(2, true)} ${t.space(2)} ${t.space(2)} ${t.space(2, true)}`
+    ]
+  }))}
 `;
 
 export const Search: React.FC = () => {

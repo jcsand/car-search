@@ -218,14 +218,14 @@ exports[`App component spec renders matching snapshot 1`] = `
 
 .emotion-17 {
   font-weight: 700;
-  padding: calc(4px * 2) 0;
+  padding: 8px 0;
   font-size: 32px;
   line-height: 40px;
 }
 
 @media (min-width: 1024px) {
   .emotion-17 {
-    padding: calc(4px * 4) 0 6px;
+    padding: 16px 0 6px;
     font-size: 40px;
     line-height: 52px;
   }
@@ -273,7 +273,7 @@ exports[`App component spec renders matching snapshot 1`] = `
     -ms-flex-direction: row;
     flex-direction: row;
     margin: 0;
-    padding-right: calc(4px * 4);
+    padding-right: 16px;
   }
 }
 
@@ -313,16 +313,16 @@ exports[`App component spec renders matching snapshot 1`] = `
 }
 
 .emotion-19::before {
-  width: calc(4px * 5);
-  height: calc(4px * 3);
-  margin-top: calc(4px * 2.5);
+  width: 20px;
+  height: 12px;
+  margin-top: 10px;
 }
 
 @media (min-width: 1024px) {
   .emotion-19::before {
-    width: calc(4px * 6);
-    height: calc(4px * 5);
-    margin-top: calc(4px * 3);
+    width: 24px;
+    height: 20px;
+    margin-top: 12px;
   }
 }
 
@@ -402,7 +402,7 @@ exports[`App component spec renders matching snapshot 1`] = `
   font-size: 16px;
   font-weight: 500;
   line-height: 24px;
-  border-radius: calc(4px * 2) calc(4px * 2) calc(4px / 2) calc(4px / 2);
+  border-radius: 8px 8px 2px 2px;
 }
 
 .emotion-24:focus {
@@ -428,7 +428,7 @@ exports[`App component spec renders matching snapshot 1`] = `
 
 @media (min-width: 1024px) {
   .emotion-24 {
-    border-radius: calc(4px * 2) calc(4px / 2) calc(4px / 2) calc(4px * 2);
+    border-radius: 8px 2px 2px 8px;
   }
 }
 
@@ -446,7 +446,7 @@ exports[`App component spec renders matching snapshot 1`] = `
   font-size: 20px;
   font-weight: 700;
   line-height: 28px;
-  border-radius: calc(4px / 2) calc(4px / 2) calc(4px * 2) calc(4px * 2);
+  border-radius: 4px 4px 8px 8px;
 }
 
 .emotion-25:focus {
@@ -466,7 +466,7 @@ exports[`App component spec renders matching snapshot 1`] = `
 
 @media (min-width: 1024px) {
   .emotion-25 {
-    border-radius: calc(4px / 2) calc(4px * 2) calc(4px * 2) calc(4px / 2);
+    border-radius: 4px 8px 8px 4px;
   }
 }
 

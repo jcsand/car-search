@@ -1,13 +1,12 @@
 /** @jsxImportSource @emotion/react */
 import React, { useState } from "react";
 import styled from "@emotion/styled";
-import { css } from "@emotion/react";
 import facepaint from "facepaint";
 
 import { LoadingSpinner } from "@@components/LoadingSpinner";
 import { Suggestions } from "@@components/Suggestions";
 import { SearchState } from "@@hooks/useSearch";
-import { t } from "@@src/lib/helpers";
+import { mediaQuery, t } from "@@lib/helpers";
 
 import searchIcon from "@@icons/search.svg";
 
@@ -44,14 +43,12 @@ const SearchInputElement = styled.input`
     color: ${t.color("grey")};
   }
 
-  ${css(
-    mq({
-      borderRadius: [
-        "calc(4px * 2) calc(4px * 2) calc(4px / 2) calc(4px / 2)",
-        "calc(4px * 2) calc(4px / 2) calc(4px / 2) calc(4px * 2)"
-      ]
-    })
-  )}
+  ${mediaQuery(mq, (t) => ({
+    borderRadius: [
+      `${t.space(2)} ${t.space(2)} ${t.space(1, true)} ${t.space(1, true)}`,
+      `${t.space(2)} ${t.space(1, true)} ${t.space(1, true)} ${t.space(2)}`
+    ]
+  }))}
 `;
 
 const SearchInputContainer = styled.div`
@@ -77,11 +74,9 @@ const SearchInputContainer = styled.div`
     pointer-events: none;
   }
 
-  ${css(
-    mq({
-      margin: ["0 0 4px 0", "0 4px 0 0"]
-    })
-  )}
+  ${mediaQuery(mq, (t) => ({
+    margin: [`0 0 ${t.space(1)} 0`, `0 ${t.space(1)} 0 0`]
+  }))}
 `;
 
 interface SearchInputProps {

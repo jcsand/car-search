@@ -2,11 +2,10 @@
 import React from "react";
 import { color, ColorProps } from "styled-system";
 import styled from "@emotion/styled";
-import { css } from "@emotion/react";
 import facepaint from "facepaint";
 
 import { Search } from "@@components/Search";
-import { t } from "@@lib/helpers";
+import { mediaQuery, t } from "@@lib/helpers";
 
 import checkmarkIcon from "@@icons/checkmark.svg";
 import heroBackground from "@@images/background-large.jpg";
@@ -25,12 +24,10 @@ const StyledHero = styled.div<ColorProps>`
   background-size: cover;
 
   ${color}
-  ${css(
-    mq({
-      height: ["auto", "min(calc(-268px + 100vh), 596px)"],
-      backgroundImage: ["none", `url(${heroBackground})`]
-    })
-  )}
+  ${mediaQuery(mq, {
+    height: ["auto", "min(calc(-268px + 100vh), 596px)"],
+    backgroundImage: ["none", `url(${heroBackground})`]
+  })}
 `;
 
 const HeroGradientOverlay = styled.div`
@@ -52,13 +49,11 @@ const HeroFlexContainer = styled.div`
 const HeroHeader = styled.h2`
   font-weight: 700;
 
-  ${css(
-    mq({
-      padding: ["calc(4px * 2) 0", "calc(4px * 4) 0 6px"],
-      fontSize: ["32px", "40px"],
-      lineHeight: ["40px", "52px"]
-    })
-  )}
+  ${mediaQuery(mq, (t) => ({
+    padding: [`${t.space(2)} 0`, `${t.space(4)} 0 ${t.space(3, true)}`],
+    fontSize: ["32px", "40px"],
+    lineHeight: ["40px", "52px"]
+  }))}
 `;
 
 const HeroList = styled.ul`
@@ -76,17 +71,15 @@ const HeroList = styled.ul`
     top: calc(-1 * ${t.space(4)});
   }
 
-  ${css(
-    mq({
-      order: [1, 0],
-      flexDirection: ["column", "row"],
-      margin: ["44px auto 16px", "0"],
-      paddingRight: ["0", "calc(4px * 4)"],
-      "&::before": {
-        display: ["block", "none"]
-      }
-    })
-  )}
+  ${mediaQuery(mq, (t) => ({
+    order: [1, 0],
+    flexDirection: ["column", "row"],
+    margin: [`${t.space(10)} auto ${t.space(4)}`, "0"],
+    paddingRight: ["0", `${t.space(4)}`],
+    "&::before": {
+      display: ["block", "none"]
+    }
+  }))}
 `;
 
 const HeroListItem = styled.li`
@@ -102,17 +95,15 @@ const HeroListItem = styled.li`
     background-size: cover;
   }
 
-  ${css(
-    mq({
-      fontSize: ["14px", "20px"],
-      lineHeight: ["20px", "28px"],
-      "&::before": {
-        width: ["calc(4px * 5)", "calc(4px * 6)"],
-        height: ["calc(4px * 3)", "calc(4px * 5)"],
-        marginTop: ["calc(4px * 2.5)", "calc(4px * 3)"]
-      }
-    })
-  )}
+  ${mediaQuery(mq, (t) => ({
+    fontSize: ["14px", "20px"],
+    lineHeight: [t.space(5), t.space(7)],
+    "&::before": {
+      width: [t.space(5), t.space(6)],
+      height: [t.space(3), t.space(5)],
+      marginTop: [t.space(5, true), t.space(3)]
+    }
+  }))}
 `;
 
 export const Hero: React.FC = () => (

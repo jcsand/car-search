@@ -2,12 +2,11 @@
 import React from "react";
 import { color, ColorProps } from "styled-system";
 import styled from "@emotion/styled";
-import { css } from "@emotion/react";
 import facepaint from "facepaint";
 import { Box, Flex } from "reflexbox";
 
 import { Button } from "@@components/Button";
-import { t } from "@@lib/helpers";
+import { mediaQuery, t } from "@@lib/helpers";
 
 import menuIcon from "@@icons/menu.svg";
 import rentalcarsLogo from "@@images/rc-logo-small--white.svg";
@@ -34,11 +33,9 @@ const HeaderFlexContainer = styled.div`
   padding-bottom: ${t.space(2)};
   padding-left: ${t.space(2)};
 
-  ${css(
-    mq({
-      paddingRight: ["0", t.space(4)]
-    })
-  )}
+  ${mediaQuery(mq, {
+    paddingRight: ["0", t.space(4)]
+  })}
 `;
 
 const HeaderLogo = styled.img`
@@ -63,11 +60,9 @@ const LanguageButton = styled(Button)`
   margin-left: ${t.space(2)};
   background: none;
 
-  ${css(
-    mq({
-      display: ["none", "block"]
-    })
-  )}
+  ${mediaQuery(mq, {
+    display: ["none", "block"]
+  })}
 `;
 
 const LanguageFlagImage = styled.img`
@@ -97,22 +92,18 @@ const HeaderManageBookingButton = styled(Button)`
       linear-gradient(${t.color("foreground")}, ${t.color("foreground")});
   }
 
-  ${css(
-    mq({
-      display: ["none", "block"]
-    })
-  )}
+  ${mediaQuery(mq, {
+    display: ["none", "block"]
+  })}
 `;
 
 const MenuButton = styled(Button)`
   margin-left: ${t.space(2)};
   background: none;
 
-  ${css(
-    mq({
-      display: ["block", "none"]
-    })
-  )}
+  ${mediaQuery(mq, {
+    display: ["block", "none"]
+  })}
 `;
 
 const MenuImage = styled.img`
