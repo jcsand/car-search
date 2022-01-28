@@ -10,7 +10,7 @@ This project was built with the expectation of the following dependencies
 ## Installation
 
 1. First install Node dependencies by running `yarn install`
-2. Validate the installation by running `yarn test build`
+2. Validate the installation by running `yarn build && yarn test`
 
 ## Development
 
