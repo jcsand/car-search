@@ -62,7 +62,7 @@ const SuggestionBadgeElement = styled.span`
   border: none;
   border-radius: ${t.space(1)};
   color: ${t.color("foreground")};
-  font-size: ${t.fontSize(1)};
+  font-size: ${t.fontSize(0)};
   font-weight: 500;
   line-height: 1rem;
   text-align: center;
