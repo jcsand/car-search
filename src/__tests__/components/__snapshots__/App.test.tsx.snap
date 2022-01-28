@@ -132,7 +132,7 @@ exports[`App component spec renders matching snapshot 1`] = `
   border-color: currentcolor;
   background-color: #fff;
   color: #1273c4;
-  line-height: calc(4px + 22px);
+  line-height: 24px;
   -webkit-text-decoration: none;
   text-decoration: none;
 }

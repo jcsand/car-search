@@ -22,7 +22,7 @@ const SearchInputElement = styled.input`
   border: none;
   color: ${t.color("lightBlack")};
   font-family: ${t.font("os")};
-  font-size: 16px;
+  font-size: ${t.fontSize(2)};
   font-weight: 500;
   line-height: ${t.space(6)};
 

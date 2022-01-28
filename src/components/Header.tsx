@@ -7,6 +7,7 @@ import { HeaderManageBooking } from "@@components/HeaderManageBooking";
 import { HeaderLanguage } from "@@components/HeaderLanguage";
 import { HeaderMenu } from "@@components/HeaderMenu";
 import { t, mediaQuery } from "@@lib/themeHelpers";
+import { breakpoints } from "@@lib/theme";
 
 const mq = mediaQuery(["s"]);
 
@@ -18,7 +19,7 @@ const HeaderBackground = styled.header`
 const HeaderContainer = styled.div`
   display: flex;
   align-items: center;
-  max-width: 1142px;
+  max-width: ${breakpoints.xl}px;
   height: ${t.space(12)};
   margin: 0 auto;
   padding-bottom: ${t.space(2)};

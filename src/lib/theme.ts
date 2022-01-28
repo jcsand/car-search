@@ -19,6 +19,8 @@ declare module "@emotion/react" {
     space: number[];
     colors: Record<validColors, string>;
     fonts: Record<validFonts, string>;
+    fontSizes: number[];
+    lineHeights: number[];
   }
 }
 
@@ -59,5 +61,7 @@ export const theme: Theme = {
   fonts: {
     base: `"Avenir Next", ${OS_FONT_STACK}`,
     os: OS_FONT_STACK
-  }
+  },
+  fontSizes: [12, 14, 16, 20, 32, 40],
+  lineHeights: [12, 18, 20, 24, 28, 40, 52]
 };

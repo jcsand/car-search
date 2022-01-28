@@ -19,18 +19,33 @@ export const themeFont =
   (name: keyof Theme["fonts"]) => (props: { theme: Theme }) =>
     `${props.theme.fonts[name]}`;
 
+export const themeFontSize =
+  (size: keyof Theme["fontSizes"] = 2) =>
+  (props: { theme: Theme }) =>
+    `${props.theme.fontSizes[size]}px`;
+
+export const themeLineHeight =
+  (size: keyof Theme["lineHeights"] = 2) =>
+  (props: { theme: Theme }) =>
+    `${props.theme.lineHeights[size]}px`;
+
 export const t = {
   space: themeSpace,
   color: themeColor,
-  font: themeFont
+  font: themeFont,
+  fontSize: themeFontSize,
+  lineHeight: themeLineHeight
 };
 
 export const wrapThemeHelpers = (props: { theme: Theme }) => ({
   space: (size: keyof Theme["space"] = 1, half = false) =>
-    themeSpace(size, half)(props),
+    t.space(size, half)(props),
   color: (name: keyof Theme["colors"], alpha = 1) =>
-    themeColor(name, alpha)(props),
-  font: (name: keyof Theme["fonts"]) => themeFont(name)(props)
+    t.color(name, alpha)(props),
+  font: (name: keyof Theme["fonts"]) => t.font(name)(props),
+  fontSize: (size: keyof Theme["fontSizes"] = 2) => t.fontSize(size)(props),
+  lineHeight: (size: keyof Theme["lineHeights"] = 2) =>
+    t.lineHeight(size)(props)
 });
 
 type WrappedThemeHelpers = ReturnType<typeof wrapThemeHelpers>;

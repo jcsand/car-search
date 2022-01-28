@@ -5,6 +5,7 @@ import styled from "@emotion/styled";
 import { Search } from "@@components/Search";
 import { HeroList } from "@@components/HeroList";
 import { mediaQuery, t } from "@@lib/themeHelpers";
+import { breakpoints } from "@@lib/theme";
 
 import heroBackground from "@@images/background-large.jpg";
 
@@ -34,7 +35,7 @@ const HeroGradientOverlay = styled.div`
 const HeroContainer = styled.div`
   display: flex;
   flex-direction: column;
-  max-width: 1142px;
+  max-width: ${breakpoints.xl}px;
   margin: 0 auto;
   padding: 0 ${t.space(4)};
 `;
@@ -44,8 +45,8 @@ const HeroHeader = styled.h2`
 
   ${mq((t) => ({
     padding: [`${t.space(2)} 0`, `${t.space(4)} 0 ${t.space(3, true)}`],
-    fontSize: ["32px", "40px"],
-    lineHeight: ["40px", "52px"]
+    fontSize: [t.fontSize(4), t.fontSize(5)],
+    lineHeight: [t.lineHeight(5), t.lineHeight(6)]
   }))}
 `;
 

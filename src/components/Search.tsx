@@ -23,12 +23,12 @@ const SearchContainer = styled.div`
 `;
 
 const SearchButton = styled(Button)`
-  height: 64px;
+  height: ${t.space(12)};
   padding: ${t.space(2)} ${t.space(4)};
   background-color: ${t.color("green")};
-  font-size: 20px;
+  font-size: ${t.fontSize(3)};
   font-weight: 700;
-  line-height: ${t.space(7)};
+  line-height: ${t.lineHeight(4)};
 
   &:focus,
   &:hover {

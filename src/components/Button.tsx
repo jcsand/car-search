@@ -8,8 +8,8 @@ export const Button = styled.button`
   border: 1px solid transparent;
   color: ${t.color("foreground")};
   font-family: ${t.font("base")};
-  font-size: 14px;
-  line-height: ${t.space(3)};
+  font-size: ${t.fontSize(1)};
+  line-height: ${t.lineHeight(0)};
   cursor: pointer;
 
   &:focus {

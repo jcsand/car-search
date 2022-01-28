@@ -18,13 +18,13 @@ const ManageContainer = styled.div`
 `;
 
 const ManageButton = styled(Button)`
-  min-height: 44px;
+  min-height: ${t.space(10)};
   padding: ${t.space(2)} ${t.space(4)};
   border-radius: ${t.space(1)};
   border-color: currentcolor;
   background-color: ${t.color("foreground")};
   color: ${t.color("lightBlue")};
-  line-height: calc(${t.space(1)} + ${t.space(10, true)});
+  line-height: ${t.lineHeight(3)};
   text-decoration: none;
 
   &:hover,

@@ -23,17 +23,17 @@ const SuggestionContent = styled.div`
 
 const SuggestionTitle = styled.p`
   font-family: ${t.font("os")};
-  font-size: 14px;
+  font-size: ${t.fontSize(1)};
   font-weight: 400;
-  line-height: ${t.space(5)};
+  line-height: ${t.lineHeight(2)};
 `;
 
 const SuggestionSubtext = styled.p`
   color: ${t.color("darkGrey")};
   font-family: ${t.font("os")};
-  font-size: 12px;
+  font-size: ${t.fontSize(0)};
   font-weight: 500;
-  line-height: 18px;
+  line-height: ${t.lineHeight(1)};
 `;
 
 interface SuggestionProps {

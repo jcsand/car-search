@@ -48,8 +48,8 @@ const HeroListItem = styled.li`
   }
 
   ${mq((t) => ({
-    fontSize: ["14px", "20px"],
-    lineHeight: [t.space(5), t.space(7)],
+    fontSize: [t.fontSize(1), t.fontSize(3)],
+    lineHeight: [t.lineHeight(2), t.lineHeight(4)],
     "&::before": {
       width: [t.space(5), t.space(6)],
       height: [t.space(3), t.space(5)],
