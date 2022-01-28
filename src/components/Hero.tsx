@@ -1,13 +1,12 @@
 /** @jsxImportSource @emotion/react */
 import React from "react";
-import { color, ColorProps } from "styled-system";
 import styled from "@emotion/styled";
 import facepaint from "facepaint";
 
 import { Search } from "@@components/Search";
+import { HeroList } from "@@components/HeroList";
 import { mediaQuery, t } from "@@lib/helpers";
 
-import checkmarkIcon from "@@icons/checkmark.svg";
 import heroBackground from "@@images/background-large.jpg";
 
 const mq = facepaint([
@@ -18,12 +17,13 @@ const mq = facepaint([
   // "@media(only screen and (min-width: 1024px))"
 ]);
 
-const StyledHero = styled.div<ColorProps>`
+const HeroBackground = styled.div`
   min-height: 290px;
+  color: ${t.color("foreground")};
   background-position: 50%;
   background-size: cover;
+  background-color: ${t.color("background")};
 
-  ${color}
   ${mediaQuery(mq, {
     height: ["auto", "min(calc(-268px + 100vh), 596px)"],
     backgroundImage: ["none", `url(${heroBackground})`]
@@ -38,7 +38,7 @@ const HeroGradientOverlay = styled.div`
   );
 `;
 
-const HeroFlexContainer = styled.div`
+const HeroContainer = styled.div`
   display: flex;
   flex-direction: column;
   max-width: 1142px;
@@ -56,68 +56,14 @@ const HeroHeader = styled.h2`
   }))}
 `;
 
-const HeroList = styled.ul`
-  position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-
-  &::before {
-    content: "";
-    border-top: 1px solid ${t.color("foreground")};
-    width: 60%;
-    margin-left: 15%;
-    position: absolute;
-    top: calc(-1 * ${t.space(4)});
-  }
-
-  ${mediaQuery(mq, (t) => ({
-    order: [1, 0],
-    flexDirection: ["column", "row"],
-    margin: [`${t.space(10)} auto ${t.space(4)}`, "0"],
-    paddingRight: ["0", `${t.space(4)}`],
-    "&::before": {
-      display: ["block", "none"]
-    }
-  }))}
-`;
-
-const HeroListItem = styled.li`
-  margin-right: ${t.space(4)};
-  list-style: none;
-
-  &::before {
-    content: "";
-    display: inline-block;
-    margin-right: ${t.space(2)};
-    background: url("${checkmarkIcon}");
-    background-position: center;
-    background-size: cover;
-  }
-
-  ${mediaQuery(mq, (t) => ({
-    fontSize: ["14px", "20px"],
-    lineHeight: [t.space(5), t.space(7)],
-    "&::before": {
-      width: [t.space(5), t.space(6)],
-      height: [t.space(3), t.space(5)],
-      marginTop: [t.space(5, true), t.space(3)]
-    }
-  }))}
-`;
-
 export const Hero: React.FC = () => (
-  <StyledHero color="foreground" bg="background">
+  <HeroBackground>
     <HeroGradientOverlay>
-      <HeroFlexContainer>
+      <HeroContainer>
         <HeroHeader>Car Hire &ndash; Search, Compare &amp; Save</HeroHeader>
-        <HeroList>
-          <HeroListItem>Free cancellations on most bookings</HeroListItem>
-          <HeroListItem>60,000+ locations</HeroListItem>
-          <HeroListItem>Customer support in 40+ languages</HeroListItem>
-        </HeroList>
+        <HeroList />
         <Search />
-      </HeroFlexContainer>
+      </HeroContainer>
     </HeroGradientOverlay>
-  </StyledHero>
+  </HeroBackground>
 );

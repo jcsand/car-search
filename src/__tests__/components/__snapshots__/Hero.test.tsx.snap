@@ -3,11 +3,11 @@
 exports[`Hero component renders matching snapshot 1`] = `
 .emotion-0 {
   min-height: 290px;
+  color: #fff;
   -webkit-background-position: 50%;
   background-position: 50%;
   -webkit-background-size: cover;
   background-size: cover;
-  color: #fff;
   background-color: #1879ca;
   height: auto;
   background-image: none;
@@ -299,7 +299,6 @@ exports[`Hero component renders matching snapshot 1`] = `
   <div>
     <div
       class="emotion-0"
-      color="foreground"
     >
       <div
         class="emotion-1"

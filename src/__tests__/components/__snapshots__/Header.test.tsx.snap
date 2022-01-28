@@ -24,9 +24,6 @@ exports[`Header component renders matching snapshot 1`] = `
 }
 
 .emotion-2 {
-  box-sizing: border-box;
-  margin: 0;
-  min-width: 0;
   -webkit-box-flex: 1;
   -webkit-flex-grow: 1;
   -ms-flex-positive: 1;
@@ -52,22 +49,19 @@ exports[`Header component renders matching snapshot 1`] = `
 }
 
 .emotion-5 {
-  box-sizing: border-box;
-  margin: 0;
-  min-width: 0;
+  display: none;
+}
+
+@media (min-width: 576px) {
+  .emotion-5 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
 }
 
 .emotion-6 {
-  box-sizing: border-box;
-  margin: 0;
-  min-width: 0;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.emotion-7 {
   padding: 8px;
   border: 1px solid transparent;
   color: #fff;
@@ -77,47 +71,30 @@ exports[`Header component renders matching snapshot 1`] = `
   cursor: pointer;
   margin-left: 8px;
   background: none;
-  display: none;
 }
 
-.emotion-7:focus {
+.emotion-6:focus {
   outline: none;
   box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.24);
 }
 
-@media (min-width: 576px) {
-  .emotion-7 {
-    display: block;
-  }
-}
-
-.emotion-9 {
+.emotion-8 {
   display: block;
   width: 24px;
   height: 24px;
   border-radius: 50%;
 }
 
-.emotion-10 {
-  padding: 8px;
-  border: 1px solid transparent;
-  color: #fff;
-  font-family: "Avenir Next",BlinkMacSystemFont,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-  font-size: 14px;
-  line-height: 12px;
-  cursor: pointer;
-  margin-left: 8px;
-  background: none;
-  display: block;
-}
-
-.emotion-10:focus {
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.24);
+.emotion-9 {
+  margin-right: 16px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 @media (min-width: 576px) {
-  .emotion-10 {
+  .emotion-9 {
     display: none;
   }
 }
@@ -129,11 +106,16 @@ exports[`Header component renders matching snapshot 1`] = `
 }
 
 .emotion-12 {
-  box-sizing: border-box;
-  margin: 0;
-  min-width: 0;
-  margin-left: calc(4px * 2);
-  padding-left: calc(4px * 2);
+  margin-left: 8px;
+  margin-right: 16px;
+  padding-left: 8px;
+  display: none;
+}
+
+@media (min-width: 576px) {
+  .emotion-12 {
+    display: block;
+  }
 }
 
 .emotion-13 {
@@ -153,7 +135,6 @@ exports[`Header component renders matching snapshot 1`] = `
   line-height: calc(4px + 22px);
   -webkit-text-decoration: none;
   text-decoration: none;
-  display: none;
 }
 
 .emotion-13:focus {
@@ -170,17 +151,10 @@ exports[`Header component renders matching snapshot 1`] = `
         ),linear-gradient(#fff, #fff);
 }
 
-@media (min-width: 576px) {
-  .emotion-13 {
-    display: block;
-  }
-}
-
 <body>
   <div>
     <header
       class="emotion-0"
-      color="foreground"
     >
       <div
         class="emotion-1"
@@ -202,33 +176,33 @@ exports[`Header component renders matching snapshot 1`] = `
         <div
           class="emotion-5"
         >
-          <div
+          <button
             class="emotion-6"
           >
-            <button
-              class="emotion-7"
-            >
-              GBP
-            </button>
-            <button
-              class="emotion-7"
-            >
-              <img
-                alt="English Language Icon"
-                class="emotion-9"
-                src="test-file-stub"
-              />
-            </button>
-            <button
-              class="emotion-10"
-            >
-              <img
-                alt="Menu Icon"
-                class="emotion-11"
-                src="test-file-stub"
-              />
-            </button>
-          </div>
+            GBP
+          </button>
+          <button
+            class="emotion-6"
+          >
+            <img
+              alt="English Language Icon"
+              class="emotion-8"
+              src="test-file-stub"
+            />
+          </button>
+        </div>
+        <div
+          class="emotion-9"
+        >
+          <button
+            class="emotion-6"
+          >
+            <img
+              alt="Menu Icon"
+              class="emotion-11"
+              src="test-file-stub"
+            />
+          </button>
         </div>
         <div
           class="emotion-12"
